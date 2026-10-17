@@ -79,3 +79,15 @@ body.light-mode{color-scheme:light;--bg:#eee9df;--paper:#e4ded2;--paper-2:#d9d1c
 .archive-footnote a{color:var(--rose)}
 @media(max-width:700px){.archive-image:nth-child(9){grid-row:span 1}.image-archive-grid{grid-auto-rows:210px}}
 @media(max-width:420px){.image-archive-grid{grid-auto-rows:175px}}
+
+/* Living Moodboard: quiet motion, zine-like controls and visible focus. */
+.moodboard-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:1.4rem 0 -1.1rem;border-top:1px solid var(--rule,#63574c);padding-top:1rem}
+.moodboard-status{display:inline-flex;align-items:center;gap:.65rem;font:.65rem/1.5 var(--mono);letter-spacing:.08em;color:var(--muted)}
+.moodboard-actions{display:flex;align-items:center;gap:.5rem}
+.moodboard-button{appearance:none;border:1px solid var(--muted);background:transparent;color:var(--text,#f1eee7);padding:.55rem .8rem;font:500 .7rem/1.2 var(--mono);cursor:pointer;text-transform:lowercase;transition:background .2s,color .2s}
+.moodboard-button:hover,.moodboard-button:focus-visible{background:var(--rose);color:#171613}
+.moodboard-button:focus-visible,.archive-image:focus-visible{outline:2px solid var(--lime,#d9ef83);outline-offset:4px}
+.archive-image.moodboard-changing img{animation:moodboard-reveal .65s ease-out both}
+@keyframes moodboard-reveal{from{opacity:.35;filter:saturate(.3) blur(5px)}to{opacity:1;filter:saturate(.65) contrast(1.08) blur(0)}}
+@media(max-width:700px){.moodboard-toolbar{margin-bottom:-.7rem}.moodboard-status{font-size:.55rem}.moodboard-button{font-size:.65rem}}
+@media(prefers-reduced-motion:reduce){.archive-image.moodboard-changing img{animation:none}.moodboard-button{transition:none}}
