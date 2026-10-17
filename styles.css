@@ -61,3 +61,21 @@ body.light-mode{color-scheme:light;--bg:#eee9df;--paper:#e4ded2;--paper-2:#d9d1c
 .archive-footnote{max-width:650px;margin:1.2rem 0 0;color:var(--muted);font:.65rem/1.8 var(--mono)}
 @media(max-width:700px){.image-archive-grid{grid-template-columns:1fr 1fr;grid-auto-rows:210px;gap:.7rem}.archive-image:nth-child(1),.archive-image:nth-child(3){grid-row:span 1}.archive-title{font-size:1.5rem}.archive-image:nth-child(1){transform:rotate(-.5deg)}}
 @media(max-width:420px){.image-archive-grid{grid-auto-rows:175px}.archive-title{font-size:1.25rem}.archive-number{font-size:.48rem}.archive-caption{font-size:.52rem;left:.65rem}}
+
+/* Actual album sleeves, posters, and archival imagery. */
+.album-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.album-visual .visual-caption{z-index:2}
+.image-unavailable{background:repeating-linear-gradient(135deg,var(--paper),var(--paper) 12px,var(--paper-2) 13px,var(--paper-2) 26px)}
+.image-archive-grid{grid-auto-rows:235px}
+.archive-image:nth-child(7){transform:rotate(.7deg)}
+.archive-image:nth-child(8){transform:rotate(-1deg)}
+.archive-image:nth-child(9){grid-row:span 2;transform:rotate(.8deg)}
+.archive-image:nth-child(10){transform:rotate(-.8deg)}
+.archive-image:nth-child(11){transform:rotate(1deg)}
+.archive-image:nth-child(12){transform:rotate(-.7deg)}
+.image-credits{max-width:760px;margin-top:1.1rem;font:.7rem/1.8 var(--mono);color:var(--muted)}
+.image-credits summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.image-credits p{padding:.75rem 0;margin:0}
+.archive-footnote a{color:var(--rose)}
+@media(max-width:700px){.archive-image:nth-child(9){grid-row:span 1}.image-archive-grid{grid-auto-rows:210px}}
+@media(max-width:420px){.image-archive-grid{grid-auto-rows:175px}}
