@@ -1,754 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arpeggi</title>
-    <!<link rel="icon" type="image/png" href="/assets/imgs/InEgUadX.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="custom silly stuff.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --ka-bg: #000000;
-            --ka-bg-light: #f7f7f7;
-            --ka-red: #e10600;
-            --ka-white: #fff;
-            --ka-black: #000000;
-            --ka-grey: #000000;
-            --ka-grey-light: #eaeaea;
-            --ka-accent: #e10600;
-            --ka-card: #f7f7f7;
-            --ka-card-dark: #000000;
-        }
-        body {
-            font-family: 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, var(--ka-bg-light) 0%, #ececec 100%);
-            margin: 0;
-            padding: 0;
-            transition: background 0.4s, color 0.4s;
-        }
-        body.dark-mode {
-            background: linear-gradient(135deg, var(--ka-bg) 0%, #23262f 100%);
-            color: var(--ka-white);
-        }
-        .container {
-            max-width: 900px;
-            min-width: 320px;
-            margin: 40px auto;
-            background: var(--ka-card);
-            border-radius: 40px;
-            box-shadow: 0 8px 40px rgba(60,60,90,0.13), 0 2px 8px rgba(60,60,90,0.08);
-            padding: 48px 32px 32px 32px;
-            backdrop-filter: blur(10px);
-            transition: background 0.4s, color 0.4s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container.dark-mode {
-            background: var(--ka-card-dark);
-            color: var(--ka-white);
-            box-shadow: 0 8px 40px rgba(0,0,0,0.22), 0 2px 8px rgba(0,0,0,0.12);
-        }
-        h1, .radiohead-font {
-            font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
-            letter-spacing: 0.06em;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 24px;
-            font-size: 3.2rem;
-            font-weight: 700;
-            color: var(--ka-black);
-            text-shadow: 0 2px 12px rgba(60,60,90,0.10);
-            transition: color 0.4s;
-        }
-        h1.dark-mode {
-            color: var(--ka-white);
-            text-shadow: 0 2px 12px rgba(225,6,0,0.18);
-        }
-        .about {
-            text-align: center;
-            margin-bottom: 32px;
-            color: var(--ka-grey);
-            font-size: 1.25rem;
-            border-radius: 24px;
-            background: rgba(245,245,255,0.7);
-            padding: 24px 18px;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.06);
-            transition: background 0.4s, color 0.4s;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .about.dark-mode {
-            background: rgba(40,44,54,0.8);
-            color: var(--ka-grey-light);
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 10px;
-            margin-bottom: 24px;
-            flex-wrap: wrap;
-        }
-        .social-links a {
-            color: var(--ka-grey);
-            font-size: 2.2rem;
-            background: rgba(240,240,255,0.8);
-            border-radius: 50%;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.10);
-            transition: color 0.2s, background 0.3s, transform 0.3s;
-            outline: none;
-            border: none;
-            position: relative;
-        }
-        .social-links a:hover, .social-links a:focus {
-            color: var(--ka-accent);
-            background: rgba(220,235,255,0.98);
-            transform: scale(1.18) translateY(-2px);
-            box-shadow: 0 8px 32px rgba(225,6,0,0.13);
-        }
-        .social-links a.dark-mode {
-            color: var(--ka-white);
-            background: rgba(40,44,54,0.8);
-        }
-        .social-links a.dark-mode:hover, .social-links a.dark-mode:focus {
-            color: var(--ka-accent);
-            background: rgba(60,70,90,0.98);
-        }
-        .icon-animate {
-            animation: bounce 0.4s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes bounce {
-            0% { transform: scale(1) translateY(0); }
-            40% { transform: scale(1.18) translateY(-8px);}
-            60% { transform: scale(0.98) translateY(2px);}
-            100% { transform: scale(1) translateY(0);}
-        }
-        .toggle-btn {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            background: rgba(240,240,255,0.8);
-            border: none;
-            font-size: 2.4rem;
-            cursor: pointer;
-            color: var(--ka-grey);
-            border-radius: 50%;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.10);
-            transition: color 0.2s, background 0.3s, transform 0.3s;
-            z-index: 10;
-        }
-        .toggle-btn:hover, .toggle-btn:focus {
-            color: var(--ka-accent);
-            background: rgba(220,235,255,0.98);
-            transform: scale(1.13) rotate(-8deg);
-        }
-        body.dark-mode .toggle-btn {
-            color: var(--ka-white);
-            background: rgba(40,44,54,0.8);
-        }
-        body.dark-mode .toggle-btn:hover, body.dark-mode .toggle-btn:focus {
-            color: var(--ka-accent);
-            background: rgba(60,70,90,0.98);
-        }
-        .toggle-animate {
-            animation: toggle-pop 0.4s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes toggle-pop {
-            0% { transform: scale(1) rotate(0deg);}
-            40% { transform: scale(1.13) rotate(12deg);}
-            60% { transform: scale(0.98) rotate(-6deg);}
-            100% { transform: scale(1) rotate(0deg);}
-        }
-        .tab-buttons {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin: 24px 0;
-            flex-wrap: wrap;
-        }
-        .tab-btn {
-            background: rgba(240,240,255,0.8);
-            border: none;
-            border-radius: 22px;
-            padding: 14px 36px;
-            font-size: 1.15rem;
-            color: #444;
-            font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.10);
-            transition: background 0.3s, color 0.3s, transform 0.2s;
-        }
-        .tab-btn.active, .tab-btn:focus {
-            background: #e10600;
-            color: #fff;
-            transform: scale(1.07);
-        }
-        body.dark-mode .tab-btn {
-            background: rgba(40,44,54,0.8);
-            color: #eee;
-        }
-        body.dark-mode .tab-btn.active, body.dark-mode .tab-btn:focus {
-            background: #e10600;
-            color: #fff;
-        }
-        
-        #homeTabContent, #aboutTabContent, #spotifyTabContent, #blogTabContent {
-            width: 100%;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .spotify-section {
-            margin-top: 18px;
-            margin-bottom: 10px;
-            padding: 18px 0 0 0;
-            border-radius: 24px;
-            background: rgba(245,245,255,0.7);
-            box-shadow: 0 2px 8px rgba(60,60,90,0.06);
-        }
-        .spotify-section.dark-mode {
-            background: rgba(40,44,54,0.8);
-        }
-        .spotify-section h2 {
-            font-size: 1.25rem;
-            color: var(--ka-accent);
-            margin-bottom: 14px;
-            letter-spacing: 0.04em;
-        }
-        .spotify-section.dark-mode h2 {
-            color: var(--ka-accent);
-        }
-        .spotify-section div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-        .spotify-section iframe {
-            width: 100%;
-            max-width: 480px;
-            height: 80px;
-            border-radius: 14px;
-            border: none;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.10);
-        }
-        
-        .blog-section {
-            margin-top: 18px;
-        }
-        .blog-section h2 {
-            font-size: 1.25rem;
-            color: var(--ka-accent);
-            text-align: center;
-            margin-bottom: 14px;
-            letter-spacing: 0.04em;
-        }
-        .blog-section.dark-mode h2 {
-            color: var(--ka-accent);
-        }
-        .blog-list {
-            text-align: center;
-            color: var(--ka-black);
-            font-size: 1.13rem;
-            padding: 18px 0;
-            border-radius: 24px;
-            background: rgba(245,245,255,0.7);
-            box-shadow: 0 2px 8px rgba(60,60,90,0.06);
-            transition: background 0.4s, color 0.4s;
-        }
-        .blog-section.dark-mode .blog-list {
-            color: var(--ka-white);
-            background: rgba(40,44,54,0.8);
-        }
-        
-        .x-preview, .x-posts-preview {
-            margin: 18px 0;
-            text-align: center;
-            background: rgba(245,245,255,0.7);
-            border-radius: 24px;
-            padding: 18px 14px;
-            box-shadow: 0 2px 8px rgba(60,60,90,0.06);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .x-posts-preview h3 {
-            color: #e10600;
-            margin-bottom: 10px;
-            font-size: 1.13rem;
-        }
-        .x-posts-preview > div {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            align-items: center;
-        }
-        .x-posts-preview > div > div {
-            background: #fff;
-            border-radius: 14px;
-            padding: 12px 18px;
-            box-shadow: 0 1px 4px rgba(60,60,90,0.04);
-            max-width: 480px;
-            text-align: left;
-        }
-        
-        #aboutTabContent section.about {
-            margin-top: 18px;
-            padding: 24px 18px;
-            font-size: 1.18rem;
-        }
-        #aboutTabContent ul {
-            list-style: none;
-            padding: 0;
-            margin: 18px 0 0 0;
-            color: #444;
-            font-size: 1.08rem;
-        }
-        
-        .kida-loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 120px;
-            width: 100%;
-            background: transparent;
-            margin-bottom: 18px;
-        }
-        .kida-bars {
-            display: flex;
-            gap: 8px;
-        }
-        .kida-bar {
-            width: 12px;
-            height: 60px;
-            background: linear-gradient(180deg, #e10600 60%, #fff 100%);
-            border-radius: 6px;
-            animation: kidaBarAnim 1.2s infinite cubic-bezier(.4,0,.2,1);
-        }
-        .kida-bar:nth-child(2) { animation-delay: 0.2s; }
-        .kida-bar:nth-child(3) { animation-delay: 0.4s; }
-        .kida-bar:nth-child(4) { animation-delay: 0.6s; }
-        .kida-bar:nth-child(5) { animation-delay: 0.8s; }
-        @keyframes kidaBarAnim {
-            0%, 100% { height: 30px; background: linear-gradient(180deg, #e10600 60%, #fff 100%);}
-            50% { height: 80px; background: linear-gradient(180deg, #fff 0%, #e10600 100%);}
-        }
-        .kida-loader-text {
-            font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
-            color: #e10600;
-            font-size: 1.1rem;
-            margin-left: 18px;
-            letter-spacing: 0.08em;
-            text-shadow: 0 2px 8px rgba(225,6,0,0.10);
-        }
-        body.dark-mode .kida-bar {
-            background: linear-gradient(180deg, #e10600 60%, #23262f 100%);
-        }
-        body.dark-mode .kida-loader-text {
-            color: #fff;
-            text-shadow: 0 2px 8px #e10600;
-        }
-        
-        @media (max-width: 1200px) {
-            .container {
-                max-width: 98vw;
-                padding: 24px 8px;
-            }
-            #homeTabContent, #aboutTabContent, #spotifyTabContent, #blogTabContent {
-                max-width: 98vw;
-            }
-            .x-preview, .x-posts-preview, .about, .spotify-section, .blog-list {
-                max-width: 98vw;
-            }
-        }
-        @media (max-width: 800px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            .tab-btn {
-                font-size: 1rem;
-                padding: 10px 18px;
-            }
-            .container {
-                padding: 12px 2px;
-                border-radius: 18px;
-            }
-            .about, .x-preview, .x-posts-preview, .spotify-section, .blog-list {
-                border-radius: 12px;
-                padding: 12px 6px;
-            }
-            .spotify-section iframe, .x-posts-preview > div > div {
-                max-width: 98vw;
-            }
-        }
-        @media (max-width: 500px) {
-            h1 {
-                font-size: 1.3rem;
-            }
-            .tab-btn {
-                font-size: 0.9rem;
-                padding: 7px 8px;
-                border-radius: 10px;
-            }
-            .container {
-                padding: 4px 0;
-                border-radius: 8px;
-            }
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-    .modal.show { display: flex; }
-        .modal-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            backdrop-filter: blur(4px);
-        }
-        .modal-content {
-            position: relative;
-            z-index: 1001;
-            background: var(--ka-card);
-            border-radius: 16px;
-            padding: 18px 20px;
-            max-width: 420px;
-            width: calc(100% - 40px);
-            box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-        body.dark-mode .modal-content { background: var(--ka-card-dark); color: var(--ka-white); }
-        .modal-body { display:flex; flex-direction:column; align-items:center; gap:10px; }
-        .modal-icon { font-size:2.2rem; color:var(--ka-accent); }
-        .modal-close {
-            position: absolute;
-            top:8px;
-            right:10px;
-            border:none;
-            background:transparent;
-            font-size:1.4rem;
-            cursor:pointer;
-            color: #888;
-        }
-        .modal-close:focus { outline:2px solid rgba(225,6,0,0.12); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11100f">
+  <meta name="description" content="Arpeggi — music, experiments, and things made on the internet.">
+  <title>Arpeggi — personal archive</title>
+  <link rel="icon" type="image/png" href="/assets/imgs/InEgUadX.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <button class="toggle-btn" id="toggleMode" aria-label="Toggle dark mode">
-        <i class="fas fa-moon" id="toggleIcon"></i>
-    </button>
-    <div class="container" id="mainContainer">
-        <h1 id="mainHeader">Arpeggi</h1>
-        <div class="about" id="aboutSection">
-            <p class="radiohead-font">Hello! I'm Arpeggi, welcome to my personal website. Here you'll find my social media and more about me like projects and stuff.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Arpeggi home">arp<span>e</span>ggi<span class="wordmark-dot">.</span></a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#listening">Listening</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch to light theme" title="Toggle colour theme">
+        <span aria-hidden="true" class="theme-glyph">◐</span><span class="theme-label">Theme</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> PERSONAL SITE / IN PROGRESS</p>
+          <h1 id="hero-title">Making things.<br><em>Feeling things.</em></h1>
+          <p class="hero-intro">I'm Arpeggi — a music person, developer, and enthusiastic collector of unfinished ideas. This is my little corner of the internet: part portfolio, part listening diary, part workbench.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="https://github.com/loveyydoll" target="_blank" rel="noopener noreferrer">Find me on GitHub ↗</a>
+          </div>
         </div>
-        <div class="social-links" id="socialLinks">
-            <a href="https://www.youtube.com/@clxirearpeggi1" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/arpeggi1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/clxirearpeggi/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://t.co/49AFIWgIav" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://x.com/clxirearpeggi" target="_blank" title="X/Twitter"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://steamcommunity.com/id/clxirearpeggi" target="_blank" title="Steam"><i class="fab fa-steam"></i></a>
+        <div class="hero-art" aria-label="Abstract artwork inspired by analogue noise and late-night listening" role="img">
+          <div class="art-sun"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-grain"></div><p class="art-caption">SIDE A — INNER WEATHER</p>
+          <span class="art-index">001 / 026</span>
         </div>
-        
-        <div class="tab-buttons">
-            <button id="homeTabBtn" class="tab-btn active">Home</button>
-            <button id="aboutTabBtn" class="tab-btn">About Me</button>
-            <button id="spotifyTabBtn" class="tab-btn">Spotify Playlists</button>
-            <button id="blogTabBtn" class="tab-btn">Blog & Updates</button>
-            <button id="discordTabBtn" class="tab-btn">Discord Server</button>
+        <div class="hero-foot"><span>BRAGA, PT · THE INTERNET</span><span>INDEPENDENT BY DEFAULT</span></div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / CURRENTLY BUILDING</p><h2 id="projects-title">Things with a pulse.</h2></div>
+          <p class="section-note">Small beginnings, ambitious ideas.<br>Open source where possible.</p>
         </div>
-        
-        <div id="kidaLoader" style="display:none;">
-            <div class="kida-loader">
-                <div class="kida-bars">
-                    <div class="kida-bar"></div>
-                    <div class="kida-bar"></div>
-                    <div class="kida-bar"></div>
-                    <div class="kida-bar"></div>
-                    <div class="kida-bar"></div>
-                </div>
-                <span class="kida-loader-text" id="kidaLoaderText">Loading...</span>
+        <div class="project-grid">
+          <article class="project-card project-aether">
+            <div class="project-topline"><span class="project-number">PROJECT 001</span><span class="project-state"><i></i> IN DEVELOPMENT</span></div>
+            <div class="project-mark mark-aether" aria-hidden="true"><span>♫</span><span class="mark-ring"></span></div>
+            <h3>Aetherband</h3>
+            <p class="project-tagline">A creative playground for sound.</p>
+            <p class="project-description">An open-source DAW exploring recording, arrangement, instruments, effects, and new ways to shape sound. Still early — being built in the open.</p>
+            <div class="tag-list"><span>Rust</span><span>Flutter</span><span>Audio</span><span>FOSS</span></div>
+            <a class="project-link" href="https://github.com/loveyydoll/Aetherband" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card project-jigsaw">
+            <div class="project-topline"><span class="project-number">PROJECT 002</span><span class="project-state"><i></i> IN DEVELOPMENT</span></div>
+            <div class="project-mark mark-jigsaw" aria-hidden="true"><span class="jigsaw-piece piece-one"></span><span class="jigsaw-piece piece-two"></span><span class="jigsaw-piece piece-three"></span><span class="jigsaw-piece piece-four"></span></div>
+            <h3>JigsawEngine</h3>
+            <p class="project-tagline">Building worlds, one piece at a time.</p>
+            <p class="project-description">A personal game-engine project exploring the tools and systems behind interactive worlds. Follow the source as the foundations take shape.</p>
+            <div class="tag-list"><span>Game development</span><span>Engine</span><span>Open source</span></div>
+            <a class="project-link" href="https://github.com/loveyydoll/JigsawEngine" target="_blank" rel="noopener noreferrer">Explore repository <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <p class="section-footnote">Both projects are works in progress. The repositories are the source of truth for current status.</p>
+      </section>
+
+      <section class="listening-section" id="listening" aria-labelledby="listening-title">
+        <div class="listening-inner">
+          <div class="listening-copy">
+            <p class="eyebrow">02 / ON REPEAT LATELY</p>
+            <h2 id="listening-title">A soundtrack for<br><em>being a person.</em></h2>
+            <p>Indie guitars, soft edges, strange textures, songs that feel like a memory you can't quite place. My taste moves around; these are some of the artists living in my head lately.</p>
+            <a class="text-link" href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Open Spotify ↗</a>
+          </div>
+          <div class="artist-notes" aria-label="Recent listening influences">
+            <div class="artist-row"><span class="artist-index">A1</span><span class="artist-name">Clairo</span><span class="artist-mood">soft focus</span></div>
+            <div class="artist-row"><span class="artist-index">A2</span><span class="artist-name">Radiohead</span><span class="artist-mood">beautiful unease</span></div>
+            <div class="artist-row"><span class="artist-index">A3</span><span class="artist-name">Lowertown</span><span class="artist-mood">scrappy / intimate</span></div>
+            <div class="artist-row"><span class="artist-index">A4</span><span class="artist-name">Mazzy Star</span><span class="artist-mood">haze</span></div>
+            <div class="artist-row"><span class="artist-index">A5</span><span class="artist-name">Alex G</span><span class="artist-mood">beautifully odd</span></div>
+            <div class="artist-row"><span class="artist-index">A6</span><span class="artist-name">Charli xcx</span><span class="artist-mood">electric chaos</span></div>
+            <div class="artist-row"><span class="artist-index">A7</span><span class="artist-name">Feist</span><span class="artist-mood">warm / human</span></div>
+            <div class="artist-row"><span class="artist-index">A8</span><span class="artist-name">Arctic Monkeys</span><span class="artist-mood">late-night cinema</span></div>
+          </div>
+        </div>
+        <p class="listening-disclaimer">A personal moodboard, not an official playlist or artist endorsement.</p>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">03 / A LITTLE CONTEXT</p><h2 id="about-title">Still figuring it out.</h2></div>
+          <span class="handwritten" aria-hidden="true">and that's the point ↗</span>
+        </div>
+        <div class="about-layout">
+          <p class="about-lead">I like things that feel <em>made by a person.</em> Music with fingerprints on it. Games with a point of view. Websites that don't feel like templates.</p>
+          <div class="about-body">
+            <p>I'm learning by making: building software, exploring music production, and following ideas far enough to see what they become. I care about atmosphere, craft, curiosity, and keeping creative tools open.</p>
+            <p>This site is an evolving archive rather than a finished statement. Expect experiments, changes of direction, and the occasional weird little detail.</p>
+            <div class="social-links" aria-label="Find me elsewhere">
+              <a href="https://github.com/loveyydoll" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+              <a href="https://www.youtube.com/@clxirearpeggi1" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span></a>
+              <a href="https://www.instagram.com/clxirearpeggi/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+              <a href="https://x.com/clxirearpeggi" target="_blank" rel="noopener noreferrer">X <span aria-hidden="true">↗</span></a>
             </div>
+          </div>
         </div>
-        
-        <div id="homeTabContent">
-            <div class="x-preview radiohead-font">
-                <a href="https://x.com/clxirearpeggi" target="_blank" style="text-decoration:none; color:#e10600; font-weight:700; font-size:1.1rem;">
-                    <i class="fab fa-x-twitter" style="font-size:1.3rem; vertical-align:middle; margin-right:6px;"></i>
-                    @clxirearpeggi on X
-                </a>
-                <div style="margin-top:8px; color:#444; font-size:0.98rem;">
-                    <em>Check out my latest updates and thoughts on X!</em>
-                </div>
-            </div>
-            <div class="x-posts-preview radiohead-font">
-                <h3>Latest X Posts Preview</h3>
-                <div>
-                    <div>
-                        <span style="color:#e10600; font-weight:600;">@clxirearpeggi</span>
-                        <span style="color:#444; margin-left:8px;">Just launched my new playlist! 🎶 Check it out on Spotify.</span>
-                        <div style="font-size:0.85rem; color:#888; margin-top:4px;">Oct 1, 2025</div>
-                    </div>
-                    <div>
-                        <span style="color:#e10600; font-weight:600;">@clxirearpeggi</span>
-                        <span style="color:#444; margin-left:8px;">Working on a new web project. Stay tuned for updates!</span>
-                        <div style="font-size:0.85rem; color:#888; margin-top:4px;">Sep 28, 2025</div>
-                    </div>
-                </div>
-                <div style="margin-top:10px;">
-                    <a href="https://x.com/clxirearpeggi" target="_blank" style="color:#e10600; text-decoration:underline;">See more on X</a>
-                </div>
-            </div>
-            <div class="youtube-preview radiohead-font" style="margin:18px 0; text-align:center; background:rgba(245,245,255,0.7); border-radius:24px; padding:18px 14px; box-shadow:0 2px 8px rgba(60,60,90,0.06); max-width:700px; margin-left:auto; margin-right:auto;">
-                <a href="https://www.youtube.com/@clclxirearpeggi1" target="_blank" style="text-decoration:none; color:#e10600; font-weight:700; font-size:1.1rem;">
-                    <i class="fab fa-youtube" style="font-size:1.3rem; vertical-align:middle; margin-right:6px;"></i>
-                    YouTube Content
-                </a>
-                <div style="margin-top:8px; color:#444; font-size:0.98rem;">
-                    <em>Watch my latest videos and listen to my music on YouTube!</em>
-                </div>
-                <div style="margin-top:14px; display:flex; justify-content:center;">
-                    
-                    <iframe width="320" height="180" src="https://www.youtube.com/embed/EW6SBWPs968" 
-                        title="YouTube Preview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen style="border-radius:12px; box-shadow:0 1px 4px rgba(60,60,90,0.04);"></iframe>
-                </div>
-            </div>
-        </div>
-        
-        <div id="aboutTabContent" style="display:none;">
-            <section class="about radiohead-font">
-                <h2 style="color:#e10600; margin-bottom:18px;">About Me</h2>
-                <p style="margin-bottom:18px;">
-                    Hi, I'm Arpeggi! I'm a Radiohead enthusiast, hardware student, and I'm from Portugal.<br><br>
-                    I enjoy creating fun projects and learning new things. I'm starting this website to share my personal projects—some for fun, some with real utility for others.<br><br>
-                    I'm a big fan of free and open source software, and I love experimenting with hardware. My mission is to make things that everyone can enjoy, even on older devices.<br><br>
-                    I also make music and hope you'll check it out. Most of my playlists are on Spotify, so give them a listen!
-                </p>
-            </section>
-        </div>
-        
-        <div id="spotifyTabContent" style="display:none;">
-            <section class="spotify-section radiohead-font" id="spotifySection">
-                <h2 style="color:#e10600; margin-bottom:18px;">My Spotify Playlists</h2>
-                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px;">
-                    <iframe src="https://open.spotify.com/embed/playlist/2z4t7ElfuRdVwCVocbdkcg?utm_source=generator"
-                        width="340" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"
-                        style="border-radius:14px; box-shadow:0 2px 8px rgba(60,60,90,0.10);"></iframe>
-                    <iframe src="https://open.spotify.com/embed/playlist/4iVYOxVCZygBUZXqvk4AUe?utm_source=generator"
-                        width="340" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"
-                        style="border-radius:14px; box-shadow:0 2px 8px rgba(60,60,90,0.10);"></iframe>
-                    <iframe src="https://open.spotify.com/embed/playlist/0efpAQetAWXrblUPYxVUbO?utm_source=generator"
-                        width="340" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"
-                        style="border-radius:14px; box-shadow:0 2px 8px rgba(60,60,90,0.10);"></iframe>
-                </div>
-                <div style="margin-top:24px; text-align:center; color:#444; font-size:1rem;">
-                    <em>Click a playlist to listen on Spotify. All playlists are made by me.</em>
-                </div>
-            </section>
-        </div>
-        
-        <div id="blogTabContent" style="display:none;">
-            <section class="blog-section" id="blogSection">
-                <h2 class="radiohead-font">Blog & Updates</h2>
-                <div class="blog-list">
-                    <p>No posts yet. Stay tuned for updates about my projects and more!</p>
-                </div>
-            </section>
-        </div>
-        
-        <div id="discordTabContent" style="display:none;">
-            <section class="about radiohead-font" style="text-align:center;">
-                <h2 style="color:#e10600; margin-bottom:18px;">Discord Server</h2>
-                <div style="margin-top:6px;">
-                    <button id="discordComingBtn" class="tab-btn" style="padding:10px 20px; border-radius:12px;">Coming Soon</button>
-                </div>
-            </section>
-        </div>
-        
-        <footer style="text-align:center; margin-top:32px; font-size:0.95rem; color:#888;">
-            <hr style="margin-bottom:12px;">
-            <p>
-                <strong>License:</strong> 
-                <a href="https://choosealicense.com/licenses/mit/" target="_blank" style="color:#e10600;">MIT License</a> — 
-                You are free to use, copy, modify, and distribute this website for any purpose, with or without attribution.
-            </p>
-        </footer>
-    </div>
-    <script>
-        const toggleBtn = document.getElementById('toggleMode');
-        const toggleIcon = document.getElementById('toggleIcon');
-        const body = document.body;
-        const container = document.getElementById('mainContainer');
-        const about = document.getElementById('aboutSection');
-        const socialLinks = document.getElementById('socialLinks');
-        const mainHeader = document.getElementById('mainHeader');
-        const spotifySection = document.getElementById('spotifySection');
-        const blogSection = document.getElementById('blogSection');
+      </section>
+    </main>
 
-        function setDarkMode(on) {
-            body.classList.toggle('dark-mode', on);
-            container.classList.toggle('dark-mode', on);
-            about.classList.toggle('dark-mode', on);
-            mainHeader.classList.toggle('dark-mode', on);
-            spotifySection.classList.toggle('dark-mode', on);
-            blogSection.classList.toggle('dark-mode', on);
-            document.querySelectorAll('.social-links a').forEach(a => {
-                a.classList.toggle('dark-mode', on);
-            });
-            toggleIcon.className = on ? 'fas fa-sun' : 'fas fa-moon';
-        }
-
-        let darkMode = localStorage.getItem('darkMode') === 'true';
-        setDarkMode(darkMode);
-
-        toggleBtn.addEventListener('click', () => {
-            darkMode = !darkMode;
-            setDarkMode(darkMode);
-            localStorage.setItem('darkMode', darkMode);
-            
-            toggleBtn.classList.add('toggle-animate');
-            setTimeout(() => toggleBtn.classList.remove('toggle-animate'), 400);
-        });
-
-        
-        document.querySelectorAll('.social-links a').forEach(a => {
-            a.addEventListener('mouseenter', () => {
-                a.classList.add('icon-animate');
-            });
-            a.addEventListener('mouseleave', () => {
-                a.classList.remove('icon-animate');
-            });
-        });
-        const homeTabBtn = document.getElementById('homeTabBtn');
-        const aboutTabBtn = document.getElementById('aboutTabBtn');
-        const spotifyTabBtn = document.getElementById('spotifyTabBtn');
-        const blogTabBtn = document.getElementById('blogTabBtn');
-        const discordTabBtn = document.getElementById('discordTabBtn');
-        const homeTabContent = document.getElementById('homeTabContent');
-        const aboutTabContent = document.getElementById('aboutTabContent');
-        const spotifyTabContent = document.getElementById('spotifyTabContent');
-        const blogTabContent = document.getElementById('blogTabContent');
-        const discordTabContent = document.getElementById('discordTabContent');
-        const kidaLoader = document.getElementById('kidaLoader');
-        const kidaLoaderText = document.getElementById('kidaLoaderText');
-
-    function showTab(tabName) {
-            homeTabContent.style.display = 'none';
-            aboutTabContent.style.display = 'none';
-            spotifyTabContent.style.display = 'none';
-            blogTabContent.style.display = 'none';
-            discordTabContent.style.display = 'none';
-            homeTabBtn.classList.remove('active');
-            aboutTabBtn.classList.remove('active');
-            spotifyTabBtn.classList.remove('active');
-            blogTabBtn.classList.remove('active');
-            discordTabBtn.classList.remove('active');
-            kidaLoader.style.display = 'flex';
-            switch(tabName) {
-                case 'home':
-                    kidaLoader.style.display = 'none';
-                    homeTabContent.style.display = '';
-                    homeTabBtn.classList.add('active');
-                    break;
-                case 'about':
-                    kidaLoaderText.textContent = 'Loading About Me...';
-                    setTimeout(() => {
-                        kidaLoader.style.display = 'none';
-                        aboutTabContent.style.display = '';
-                        aboutTabBtn.classList.add('active');
-                    }, 1200);
-                    break;
-                case 'spotify':
-                    kidaLoaderText.textContent = 'Loading Spotify Playlists...';
-                    setTimeout(() => {
-                        kidaLoader.style.display = 'none';
-                        spotifyTabContent.style.display = '';
-                        spotifyTabBtn.classList.add('active');
-                    }, 1200);
-                    break;
-                case 'blog':
-                    kidaLoaderText.textContent = 'Loading Blog & Updates...';
-                    setTimeout(() => {
-                        kidaLoader.style.display = 'none';
-                        blogTabContent.style.display = '';
-                        blogTabBtn.classList.add('active');
-                    }, 1200);
-                    break;
-                case 'discord':
-                    kidaLoaderText.textContent = 'Loading Discord Server...';
-                    setTimeout(() => {
-                        kidaLoader.style.display = 'none';
-                        discordTabContent.style.display = '';
-                        discordTabBtn.classList.add('active');
-                    }, 1200);
-                    break;
-            }
-        }
-
-        homeTabBtn.addEventListener('click', () => showTab('home'));
-        aboutTabBtn.addEventListener('click', () => showTab('about'));
-        spotifyTabBtn.addEventListener('click', () => showTab('spotify'));
-        blogTabBtn.addEventListener('click', () => showTab('blog'));
-        discordTabBtn.addEventListener('click', () => showTab('discord'));
-
-        showTab('home');
-    </script>
-    <div id="comingModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-content" role="document">
-            <button class="modal-close" id="modalCloseBtn" aria-label="Close">&times;</button>
-            <div class="modal-body">
-                <div class="modal-icon" aria-hidden="true"><i class="fas fa-hard-hat"></i></div>
-                <h3 style="margin:0; color:var(--ka-accent);">Under development</h3>
-                <p style="margin:6px 0 0 0; color:#666;">This server is currently being built, come back later. </p>
-                <div style="margin-top:12px;"><button id="modalOkBtn" class="tab-btn" style="padding:8px 18px; border-radius:10px;">OK</button></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        
-        const discordComingBtn = document.getElementById('discordComingBtn');
-        const comingModal = document.getElementById('comingModal');
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        const modalOkBtn = document.getElementById('modalOkBtn');
-
-        function showComingModal() {
-            comingModal.classList.add('show');
-            comingModal.setAttribute('aria-hidden', 'false');
-        }
-        function hideComingModal() {
-            comingModal.classList.remove('show');
-            comingModal.setAttribute('aria-hidden', 'true');
-        }
-
-        if (discordComingBtn) {
-            discordComingBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                showComingModal();
-            });
-        }
-        modalOverlay.addEventListener('click', hideComingModal);
-        modalCloseBtn.addEventListener('click', hideComingModal);
-        modalOkBtn.addEventListener('click', hideComingModal);
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && comingModal.classList.contains('show')) hideComingModal();
-        });
-    </script>
+    <footer class="footer">
+      <a class="wordmark footer-wordmark" href="#top">arpeggi<span class="wordmark-dot">.</span></a>
+      <p>Made slowly, with intent. © <span id="year">2026</span></p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+  </div>
 </body>
 </html>
