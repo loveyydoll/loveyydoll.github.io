@@ -14,3 +14,95 @@
     });
   }
 })();
+
+/* Living Moodboard: curated, no third-party API calls or image scraping. */
+(() => {
+  const grid = document.querySelector('[data-living-moodboard]');
+  const pauseButton = document.querySelector('#moodboard-pause');
+  const shuffleButton = document.querySelector('#moodboard-shuffle');
+  const items = window.LOVEYY_MOODBOARD_ITEMS;
+  if (!grid || !pauseButton || !shuffleButton || !Array.isArray(items)) return;
+
+  const tiles = Array.from(grid.querySelectorAll('a.archive-image'));
+  if (!tiles.length || items.length <= tiles.length) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const INTERVAL_MS = 30000;
+  let paused = reduceMotion.matches;
+  let busy = false;
+  let timer = null;
+  let cursor = 0;
+  // The initial HTML deliberately contains the first entries as a useful no-JS fallback.
+  const active = tiles.map((_, index) => index);
+
+  function updateControls() {
+    pauseButton.textContent = paused ? 'play ▶' : 'pause Ⅱ';
+    pauseButton.setAttribute('aria-pressed', String(paused));
+    pauseButton.setAttribute('aria-label', paused ? 'Resume image rotation' : 'Pause image rotation');
+    grid.classList.toggle('moodboard-paused', paused);
+  }
+
+  function shouldRotate() {
+    return !paused && !document.hidden && !grid.matches(':hover') && !grid.contains(document.activeElement);
+  }
+
+  function swapOne(force = false) {
+    if (busy || (!force && !shouldRotate())) return;
+    const available = items.map((_, index) => index).filter(index => !active.includes(index));
+    if (!available.length) return;
+    const slot = cursor++ % tiles.length;
+    const next = available[Math.floor(Math.random() * available.length)];
+    const item = items[next], tile = tiles[slot];
+    const image = tile.querySelector('img');
+    const number = tile.querySelector('.archive-number');
+    const title = tile.querySelector('.archive-title');
+    const caption = tile.querySelector('.archive-caption');
+    if (!image || !number || !title || !caption) return;
+    busy = true;
+    const preloaded = new Image();
+    let settled = false;
+    const watchdog = window.setTimeout(() => finish(false), 10000);
+    function finish(ok) {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(watchdog);
+      if (ok && (force || shouldRotate())) {
+        tile.classList.add('moodboard-changing');
+        image.src = item.url;
+        image.alt = item.alt;
+        image.style.visibility = '';
+        tile.classList.remove('image-unavailable');
+        tile.href = item.link;
+        number.textContent = String(slot + 1).padStart(2, '0') + ' / ' + item.type;
+        title.textContent = item.title;
+        caption.textContent = item.caption + ' ↗';
+        active[slot] = next;
+        window.setTimeout(() => tile.classList.remove('moodboard-changing'), 650);
+      }
+      busy = false;
+    }
+    preloaded.onload = () => finish(true);
+    preloaded.onerror = () => finish(false);
+    preloaded.src = item.url;
+  }
+
+  function startTimer() {
+    if (timer) window.clearInterval(timer);
+    timer = window.setInterval(() => swapOne(false), INTERVAL_MS);
+  }
+
+  pauseButton.addEventListener('click', () => {
+    paused = !paused;
+    updateControls();
+    startTimer();
+  });
+  shuffleButton.addEventListener('click', () => {
+    swapOne(true);
+    startTimer();
+  });
+  if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', event => {
+    paused = event.matches;
+    updateControls();
+  });
+  updateControls();
+  startTimer();
+})();
