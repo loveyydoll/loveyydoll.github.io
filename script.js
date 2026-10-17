@@ -45,14 +45,13 @@
     return !paused && !document.hidden && !grid.matches(':hover') && !grid.contains(document.activeElement);
   }
 
-  function swapOne() {
-    if (busy || !shouldRotate()) return;
+  function swapOne(force = false) {
+    if (busy || (!force && !shouldRotate())) return;
     const available = items.map((_, index) => index).filter(index => !active.includes(index));
     if (!available.length) return;
     const slot = cursor++ % tiles.length;
     const next = available[Math.floor(Math.random() * available.length)];
-    const item = items[next];
-    const tile = tiles[slot];
+    const item = items[next], tile = tiles[slot];
     const image = tile.querySelector('img');
     const number = tile.querySelector('.archive-number');
     const title = tile.querySelector('.archive-title');
@@ -66,7 +65,7 @@
       if (settled) return;
       settled = true;
       window.clearTimeout(watchdog);
-      if (ok && shouldRotate()) {
+      if (ok && (force || shouldRotate())) {
         tile.classList.add('moodboard-changing');
         image.src = item.url;
         image.alt = item.alt;
@@ -88,7 +87,7 @@
 
   function startTimer() {
     if (timer) window.clearInterval(timer);
-    timer = window.setInterval(swapOne, INTERVAL_MS);
+    timer = window.setInterval(() => swapOne(false), INTERVAL_MS);
   }
 
   pauseButton.addEventListener('click', () => {
@@ -97,47 +96,7 @@
     startTimer();
   });
   shuffleButton.addEventListener('click', () => {
-    // A manual shuffle is allowed even when the automatic rotation is paused.
-    if (busy) return;
-    const wasPaused = paused;
-    paused = false;
-    // Ignore hover/focus suppression only for this direct user action.
-    const originalShouldRotate = shouldRotate;
-    void originalShouldRotate;
-    const available = items.map((_, index) => index).filter(index => !active.includes(index));
-    if (available.length) {
-      const slot = cursor++ % tiles.length;
-      const next = available[Math.floor(Math.random() * available.length)];
-      const item = items[next], tile = tiles[slot], image = tile.querySelector('img');
-      busy = true;
-      const preloaded = new Image();
-      let settled = false;
-      const watchdog = window.setTimeout(() => complete(false), 10000);
-      function complete(ok) {
-        if (settled) return;
-        settled = true;
-        window.clearTimeout(watchdog);
-        if (ok && image) {
-          tile.classList.add('moodboard-changing');
-          image.src = item.url;
-          image.alt = item.alt;
-          image.style.visibility = '';
-          tile.classList.remove('image-unavailable');
-          tile.href = item.link;
-          tile.querySelector('.archive-number').textContent = String(slot + 1).padStart(2, '0') + ' / ' + item.type;
-          tile.querySelector('.archive-title').textContent = item.title;
-          tile.querySelector('.archive-caption').textContent = item.caption + ' ↗';
-          active[slot] = next;
-          window.setTimeout(() => tile.classList.remove('moodboard-changing'), 650);
-        }
-        busy = false;
-      }
-      preloaded.onload = () => complete(true);
-      preloaded.onerror = () => complete(false);
-      preloaded.src = item.url;
-    }
-    paused = wasPaused;
-    updateControls();
+    swapOne(true);
     startTimer();
   });
   if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', event => {
