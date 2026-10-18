@@ -1,4 +1,4 @@
-/* Local artwork; one entry per title. Credits: image-credits.html. */
+/* Local artwork. Film choices: docs/film-tv-preferences.json. Credits: image-credits.html. */
 window.LOVEYY_SCRAPBOOKS = {
   "music": [
     {
@@ -85,6 +85,33 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/bltbca4b05c60eab1f8/691c7f1d3f08bee35bb3b0b6/TheBreakfastClub_Poster_2000x3000_uaa.jpg?width=2560"
     },
     {
+      "title": "I Saw the TV Glow",
+      "link": "https://a24films.com/films/i-saw-the-tv-glow",
+      "url": "assets/scrapbook/tv-glow.webp",
+      "source": "https://a24films.com/films/i-saw-the-tv-glow/og-image",
+      "alt": "I Saw the TV Glow artwork from its official film page",
+      "type": "FILM",
+      "caption": "a favorite / kept close"
+    },
+    {
+      "title": "Everything Everywhere All at Once",
+      "link": "https://a24films.com/films/everything-everywhere-all-at-once",
+      "url": "assets/scrapbook/eeaao.webp",
+      "source": "https://a24films.com/films/everything-everywhere-all-at-once/og-image",
+      "alt": "Everything Everywhere All at Once artwork from its official film page",
+      "type": "FILM",
+      "caption": "a favorite / kept close"
+    },
+    {
+      "title": "Dead Poets Society",
+      "link": "https://tv.apple.com/us/movie/dead-poets-society/umc.cmc.40eizj37hvedszozcidhgpari",
+      "url": "assets/scrapbook/dead-poets.webp",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/55/02/57/5502571b-4870-b977-596f-dffe890879b3/DIS_DEAD_POETS_SOCIETY_WW_ARTWORK_EN_3840x2160_1VAQ72000000E6.lsr/1200x675.jpg",
+      "alt": "Dead Poets Society artwork from its official film page",
+      "type": "FILM",
+      "caption": "a favorite / kept close"
+    },
+    {
       "url": "assets/scrapbook/06.webp",
       "alt": "Lady Bird 2017 movie poster",
       "type": "FILM",
@@ -92,15 +119,6 @@ window.LOVEYY_SCRAPBOOKS = {
       "caption": "growing up in two directions",
       "link": "https://www.imdb.com/title/tt4925292/",
       "source": "https://images.squarespace-cdn.com/content/v1/59664adc15d5db3f2ad78ccd/1545847420592-DF26Y9WB4YLH7LOYT86Z/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU%2540._V1_.jpg?format=2500w"
-    },
-    {
-      "url": "assets/scrapbook/12.webp",
-      "alt": "The Perks of Being a Wallflower movie poster",
-      "type": "FILM",
-      "title": "The Perks of Being a Wallflower",
-      "caption": "you were always here",
-      "link": "https://www.imdb.com/title/tt1659337/",
-      "source": "https://m.media-amazon.com/images/M/MV5BNTY0ZTI2NzQtYWI1YS00ZWM3LWFmMjMtZWYxNmNmOTI0MGJjXkEyXkFqcGc%40._V1_.jpg"
     }
   ],
   "worlds": [
