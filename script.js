@@ -1,108 +1,61 @@
 (() => {
-  const year = document.querySelector("#year");
+  const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
-
-  const toggle = document.querySelector(".theme-toggle");
-  if (toggle) {
-    toggle.addEventListener("click", () => {
-      const isLight = document.body.classList.toggle("light-mode");
-      toggle.setAttribute("aria-pressed", String(isLight));
-      const label = toggle.querySelector(".theme-label");
-      if (label) label.textContent = isLight ? "day mode" : "night mode";
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", isLight ? "#eee9df" : "#171613");
-    });
-  }
-})();
-
-/* Living Moodboard: curated, no third-party API calls or image scraping. */
-(() => {
-  const grid = document.querySelector('[data-living-moodboard]');
-  const pauseButton = document.querySelector('#moodboard-pause');
-  const shuffleButton = document.querySelector('#moodboard-shuffle');
-  const items = window.LOVEYY_MOODBOARD_ITEMS;
-  if (!grid || !pauseButton || !shuffleButton || !Array.isArray(items)) return;
-
-  const tiles = Array.from(grid.querySelectorAll('a.archive-image'));
-  if (!tiles.length || items.length <= tiles.length) return;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const INTERVAL_MS = 30000;
-  let paused = reduceMotion.matches;
-  let busy = false;
-  let timer = null;
-  let cursor = 0;
-  // The initial HTML deliberately contains the first entries as a useful no-JS fallback.
-  const active = tiles.map((_, index) => index);
-
-  function updateControls() {
-    pauseButton.textContent = paused ? 'play ▶' : 'pause Ⅱ';
-    pauseButton.setAttribute('aria-pressed', String(paused));
-    pauseButton.setAttribute('aria-label', paused ? 'Resume image rotation' : 'Pause image rotation');
-    grid.classList.toggle('moodboard-paused', paused);
-  }
-
-  function shouldRotate() {
-    return !paused && !document.hidden && !grid.matches(':hover') && !grid.contains(document.activeElement);
-  }
-
-  function swapOne(force = false) {
-    if (busy || (!force && !shouldRotate())) return;
-    const available = items.map((_, index) => index).filter(index => !active.includes(index));
-    if (!available.length) return;
-    const slot = cursor++ % tiles.length;
-    const next = available[Math.floor(Math.random() * available.length)];
-    const item = items[next], tile = tiles[slot];
-    const image = tile.querySelector('img');
-    const number = tile.querySelector('.archive-number');
-    const title = tile.querySelector('.archive-title');
-    const caption = tile.querySelector('.archive-caption');
-    if (!image || !number || !title || !caption) return;
-    busy = true;
-    const preloaded = new Image();
-    let settled = false;
-    const watchdog = window.setTimeout(() => finish(false), 10000);
-    function finish(ok) {
-      if (settled) return;
-      settled = true;
-      window.clearTimeout(watchdog);
-      if (ok && (force || shouldRotate())) {
-        tile.classList.add('moodboard-changing');
+  const toggle = document.querySelector('.theme-toggle');
+  if (toggle) toggle.addEventListener('click', () => {
+    const night = document.body.classList.toggle('night-mode');
+    toggle.setAttribute('aria-pressed', String(night));
+    toggle.querySelector('.theme-label').textContent = night ? 'paper mode' : 'night mode';
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', night ? '#231f23' : '#f0e9dc');
+  });
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const hold = document.querySelector('#hold-pages');
+  document.querySelectorAll('[data-scrapbook]').forEach((board, boardIndex) => {
+    const pool = window.LOVEYY_SCRAPBOOKS?.[board.dataset.scrapbook];
+    const tiles = [...board.querySelectorAll('.scrap')];
+    if (!pool?.length || !tiles.length) return;
+    const active = tiles.map(tile => pool.findIndex(item => tile.querySelector('img').getAttribute('src') === item.url));
+    const failed = new Set();
+    let cursor = 0;
+    let busy = false;
+    async function turnPage() {
+      if (busy || document.hidden || hold?.checked) return;
+      const slots = tiles.map((_, i) => (cursor + i) % tiles.length).filter(i => !tiles[i].contains(document.activeElement));
+      const candidates = pool.map((_, i) => i).filter(i => !active.includes(i) && !failed.has(i));
+      if (!slots.length || !candidates.length) return;
+      busy = true;
+      const slot = slots[0];
+      const next = candidates[Math.floor(Math.random() * candidates.length)];
+      const item = pool[next];
+      const preload = new Image();
+      try {
+        await new Promise((resolve, reject) => {
+          const timeout = setTimeout(() => reject(Error('Image timeout')), 6000);
+          preload.onload = () => { clearTimeout(timeout); resolve(); };
+          preload.onerror = () => { clearTimeout(timeout); reject(Error('Image unavailable')); };
+          preload.src = item.url;
+        });
+        if (document.hidden || hold?.checked || tiles[slot].contains(document.activeElement)) return;
+        const tile = tiles[slot];
+        const image = tile.querySelector('img');
         image.src = item.url;
         image.alt = item.alt;
-        image.style.visibility = '';
-        tile.classList.remove('image-unavailable');
         tile.href = item.link;
-        number.textContent = String(slot + 1).padStart(2, '0') + ' / ' + item.type;
-        title.textContent = item.title;
-        caption.textContent = item.caption + ' ↗';
+        tile.querySelector('.scrap-meta').textContent = `fragment ${String(slot + 1).padStart(2, '0')} / ${item.type.toLowerCase()}`;
+        tile.querySelector('.scrap-title').textContent = item.title;
+        tile.querySelector('.scrap-caption').textContent = item.caption + ' ↗';
+        if (!reduced.matches) {
+          tile.classList.remove('page-turn');
+          void tile.offsetWidth;
+          tile.classList.add('page-turn');
+        }
         active[slot] = next;
-        window.setTimeout(() => tile.classList.remove('moodboard-changing'), 650);
-      }
-      busy = false;
+        cursor = (slot + 1) % tiles.length;
+      } catch { failed.add(next); } finally { busy = false; }
     }
-    preloaded.onload = () => finish(true);
-    preloaded.onerror = () => finish(false);
-    preloaded.src = item.url;
-  }
-
-  function startTimer() {
-    if (timer) window.clearInterval(timer);
-    timer = window.setInterval(() => swapOne(false), INTERVAL_MS);
-  }
-
-  pauseButton.addEventListener('click', () => {
-    paused = !paused;
-    updateControls();
-    startTimer();
+    // Start automatically. Hover never blocks the scrapbook; focused links stay stable.
+    setTimeout(turnPage, 2200 + boardIndex * 1300);
+    setInterval(turnPage, 6500 + boardIndex * 900);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) turnPage(); });
   });
-  shuffleButton.addEventListener('click', () => {
-    swapOne(true);
-    startTimer();
-  });
-  if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', event => {
-    paused = event.matches;
-    updateControls();
-  });
-  updateControls();
-  startTimer();
 })();
