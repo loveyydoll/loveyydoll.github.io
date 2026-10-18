@@ -1,0 +1,86 @@
+{
+  "source": "Current listening list supplied directly by loveyy in the website chat on 2026-10-18",
+  "artists": [
+    "Clairo",
+    "Radiohead",
+    "Olivia O.",
+    "Fontaines D.C.",
+    "Lowertown",
+    "beabadoobee",
+    "Feist",
+    "TV Girl",
+    "Wallows",
+    "Maya Hawke",
+    "Alex G",
+    "Angus & Julia Stone",
+    "Mazzy Star",
+    "Broken Social Scene"
+  ],
+  "records": [
+    {
+      "artist": "Clairo",
+      "title": "Charm"
+    },
+    {
+      "artist": "Radiohead",
+      "title": "In Rainbows"
+    },
+    {
+      "artist": "beabadoobee",
+      "title": "This Is How Tomorrow Moves"
+    },
+    {
+      "artist": "Feist",
+      "title": "The Reminder (Deluxe Version)"
+    },
+    {
+      "artist": "TV Girl",
+      "title": "French Exit"
+    },
+    {
+      "artist": "Alex G",
+      "title": "God Save the Animals"
+    },
+    {
+      "artist": "Angus & Julia Stone",
+      "title": "Down The Way"
+    },
+    {
+      "artist": "Mazzy Star",
+      "title": "So Tonight That I Might See"
+    },
+    {
+      "artist": "Fontaines D.C.",
+      "title": "Romance"
+    },
+    {
+      "artist": "Lowertown",
+      "title": "The Gaping Mouth"
+    },
+    {
+      "artist": "Wallows",
+      "title": "Nothing Happens"
+    },
+    {
+      "artist": "Maya Hawke",
+      "title": "Chaos Angel"
+    },
+    {
+      "artist": "Broken Social Scene",
+      "title": "You Forgot It In People"
+    },
+    {
+      "artist": "Olivia O.",
+      "title": "No Bones, Sickly Sweet"
+    }
+  ],
+  "featuredTrack": {
+    "artist": "Broken Social Scene",
+    "title": "Anthems for a Seventeen Year-Old Girl",
+    "record": "You Forgot It in People"
+  },
+  "notes": [
+    "Record selections illustrate the supplied artists; they are not a claim that these are the user’s favorite albums.",
+    "Broken Social Scene and the record containing Anthems for a Seventeen Year-Old Girl were explicitly requested."
+  ]
+}

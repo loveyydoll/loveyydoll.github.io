@@ -1,0 +1,28 @@
+{
+  "source": "Provided directly by loveyy in the website chat on 2026-10-18",
+  "notes": [
+    "Watched does not mean favorite. Preserve these categories separately.",
+    "Franchise and trilogy entries are recorded as supplied, without inferring individual titles.",
+    "Tarantino's movies is a broad favorite preference, not confirmation that every Tarantino film has been watched.",
+    "The Breakfast Club was described as shaping loveyy's personality, especially Allison and Claire.",
+    "Mulholland Drive is excluded from the favorites scrapbook: loveyy has not truly watched it.",
+    "The Perks of Being a Wallflower was present in the old site but was not confirmed in this supplied list."
+  ],
+  "watched": [
+    "TENET", "Dead Poets Society", "Good Will Hunting", "Kill Bill Vol. 1",
+    "Once Upon a Time in Hollywood", "Django Unchained", "Oppenheimer",
+    "Spider-Man (Tom Holland franchise)", "Spider-Man: Into the Spider-Verse", "Spider-Man: Across the Spider-Verse",
+    "Interstellar", "Heat", "One Battle After Another", "007 (Daniel Craig films)", "Novocaine", "Heretic", "Tetris",
+    "Kingsman trilogy", "The Wolf of Wall Street", "Whiplash", "V for Vendetta", "The Grand Budapest Hotel",
+    "Fight Club", "Reservoir Dogs", "Inglourious Basterds", "A Fistful of Dollars", "For a Few Dollars More",
+    "Project Hail Mary", "Pulp Fiction", "Sunshine", "Trainspotting", "T2 Trainspotting", "Hot Fuzz",
+    "I Saw the TV Glow", "The Master", "Children of Men", "The Drama", "There Will Be Blood", "Baby Driver",
+    "John Wick franchise", "Everything Everywhere All at Once", "Knives Out trilogy", "Sicario", "Dune: Part One", "Dune: Part Two",
+    "Blade Runner 2049", "Bullet Train", "Drive", "The Batman", "Lady Bird", "Inception", "The Dark Knight trilogy", "The Breakfast Club"
+  ],
+  "favorites": [
+    "Tarantino's movies", "Dead Poets Society", "Lady Bird", "Good Will Hunting", "I Saw the TV Glow",
+    "Everything Everywhere All at Once", "Inception", "The Dark Knight trilogy", "TENET", "The Breakfast Club", "Trainspotting", "T2 Trainspotting"
+  ],
+  "favoriteTV": ["True Detective — Season 1", "House"]
+}
