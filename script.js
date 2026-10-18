@@ -1,13 +1,6 @@
 (() => {
   const year = document.querySelector('#year');
   if (year) year.textContent = String(new Date().getFullYear());
-  const toggle = document.querySelector('.theme-toggle');
-  if (toggle) toggle.addEventListener('click', () => {
-    const night = document.body.classList.toggle('night-mode');
-    toggle.setAttribute('aria-pressed', String(night));
-    toggle.querySelector('.theme-label').textContent = night ? 'paper mode' : 'night mode';
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', night ? '#292720' : '#f3eddf');
-  });
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hold = document.querySelector('#hold-pages');
   document.querySelectorAll('[data-scrapbook]').forEach((board, boardIndex) => {
