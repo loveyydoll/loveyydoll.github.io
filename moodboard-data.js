@@ -1,4 +1,4 @@
-/* Verified local artwork. See image-credits.html for original sources. */
+/* Local artwork; one entry per title. Credits: image-credits.html. */
 window.LOVEYY_SCRAPBOOKS = {
   "music": [
     {
@@ -85,15 +85,6 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/bltbca4b05c60eab1f8/691c7f1d3f08bee35bb3b0b6/TheBreakfastClub_Poster_2000x3000_uaa.jpg?width=2560"
     },
     {
-      "url": "assets/scrapbook/04.webp",
-      "alt": "Mulholland Drive film poster",
-      "type": "FILM",
-      "title": "Mulholland Drive",
-      "caption": "no one is quite who they seem",
-      "link": "https://www.imdb.com/title/tt0166924/",
-      "source": "https://filmartgallery.com/cdn/shop/products/Mulholland-Drive-Vintage-Movie-Poster-Original_15a8e2a6_2000x.jpg?v=1771964758"
-    },
-    {
       "url": "assets/scrapbook/06.webp",
       "alt": "Lady Bird 2017 movie poster",
       "type": "FILM",
@@ -110,15 +101,6 @@ window.LOVEYY_SCRAPBOOKS = {
       "caption": "you were always here",
       "link": "https://www.imdb.com/title/tt1659337/",
       "source": "https://m.media-amazon.com/images/M/MV5BNTY0ZTI2NzQtYWI1YS00ZWM3LWFmMjMtZWYxNmNmOTI0MGJjXkEyXkFqcGc%40._V1_.jpg"
-    },
-    {
-      "url": "assets/scrapbook/17.webp",
-      "alt": "Allison Reynolds from The Breakfast Club",
-      "type": "FILM",
-      "title": "Allison Reynolds",
-      "caption": "the breakfast club / 1985",
-      "link": "https://www.universalpicturesathome.com/movies/the-breakfast-club",
-      "source": "https://m.media-amazon.com/images/M/MV5BNTY5YTQxZjEtOWJkMS00MDZkLWIzMWQtNDczYjQyMDhkMmY0XkEyXkFqcGc%40._V1_.jpg"
     }
   ],
   "worlds": [
@@ -148,15 +130,6 @@ window.LOVEYY_SCRAPBOOKS = {
       "caption": "another night in night city",
       "link": "https://www.cyberpunk.net/",
       "source": "https://fony.sk/sites/fony.sk/files/images/2023-10/e22efe5995a1271bc407b45e7d4a1b64bb3d9adae88b1887.png.jpeg"
-    },
-    {
-      "url": "assets/scrapbook/18.webp",
-      "title": "Control",
-      "caption": "nothing here is ordinary",
-      "alt": "Control official game artwork",
-      "type": "GAME",
-      "link": "https://store.steampowered.com/app/870780/",
-      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/870780/header.jpg"
     },
     {
       "url": "assets/scrapbook/19.webp",

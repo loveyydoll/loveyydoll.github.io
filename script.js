@@ -6,12 +6,14 @@
     const night = document.body.classList.toggle('night-mode');
     toggle.setAttribute('aria-pressed', String(night));
     toggle.querySelector('.theme-label').textContent = night ? 'paper mode' : 'night mode';
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', night ? '#231f23' : '#f0e9dc');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', night ? '#292720' : '#f3eddf');
   });
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const hold = document.querySelector('#hold-pages');
   document.querySelectorAll('[data-scrapbook]').forEach((board, boardIndex) => {
-    const pool = window.LOVEYY_SCRAPBOOKS?.[board.dataset.scrapbook];
+    const source = window.LOVEYY_SCRAPBOOKS?.[board.dataset.scrapbook];
+    // Guard against duplicate titles in future content edits as well.
+    const pool = source?.filter((item, index) => source.findIndex(other => other.title.trim().toLowerCase() === item.title.trim().toLowerCase()) === index);
     const tiles = [...board.querySelectorAll('.scrap')];
     if (!pool?.length || !tiles.length) return;
     const active = tiles.map(tile => pool.findIndex(item => tile.querySelector('img').getAttribute('src') === item.url));
@@ -22,7 +24,21 @@
       if (busy || document.hidden || hold?.checked) return;
       const slots = tiles.map((_, i) => (cursor + i) % tiles.length).filter(i => !tiles[i].contains(document.activeElement));
       const candidates = pool.map((_, i) => i).filter(i => !active.includes(i) && !failed.has(i));
-      if (!slots.length || !candidates.length) return;
+      if (!slots.length) return;
+      // Small collections still move: exchange two existing fragments instead
+      // of requiring more images than slots or displaying duplicate titles.
+      if (!candidates.length) {
+        if (slots.length < 2) return;
+        const first = slots[0], second = slots[1];
+        const a = active[first], b = active[second];
+        if (!pool[a] || !pool[b]) return;
+        render(tiles[first], pool[b], first);
+        render(tiles[second], pool[a], second);
+        active[first] = b;
+        active[second] = a;
+        cursor = (first + 1) % tiles.length;
+        return;
+      }
       busy = true;
       const slot = slots[0];
       const next = candidates[Math.floor(Math.random() * candidates.length)];
@@ -36,22 +52,24 @@
           preload.src = item.url;
         });
         if (document.hidden || hold?.checked || tiles[slot].contains(document.activeElement)) return;
-        const tile = tiles[slot];
-        const image = tile.querySelector('img');
-        image.src = item.url;
-        image.alt = item.alt;
-        tile.href = item.link;
-        tile.querySelector('.scrap-meta').textContent = `fragment ${String(slot + 1).padStart(2, '0')} / ${item.type.toLowerCase()}`;
-        tile.querySelector('.scrap-title').textContent = item.title;
-        tile.querySelector('.scrap-caption').textContent = item.caption + ' ↗';
-        if (!reduced.matches) {
-          tile.classList.remove('page-turn');
-          void tile.offsetWidth;
-          tile.classList.add('page-turn');
-        }
+        render(tiles[slot], item, slot);
         active[slot] = next;
         cursor = (slot + 1) % tiles.length;
       } catch { failed.add(next); } finally { busy = false; }
+    }
+    function render(tile, item, slot) {
+      const image = tile.querySelector('img');
+      image.src = item.url;
+      image.alt = item.alt;
+      tile.href = item.link;
+      tile.querySelector('.scrap-meta').textContent = `fragment ${String(slot + 1).padStart(2, '0')} / ${item.type.toLowerCase()}`;
+      tile.querySelector('.scrap-title').textContent = item.title;
+      tile.querySelector('.scrap-caption').textContent = item.caption + ' ↗';
+      if (!reduced.matches) {
+        tile.classList.remove('page-turn');
+        void tile.offsetWidth;
+        tile.classList.add('page-turn');
+      }
     }
     // Start automatically. Hover never blocks the scrapbook; focused links stay stable.
     setTimeout(turnPage, 2200 + boardIndex * 1300);
