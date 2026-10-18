@@ -80,7 +80,7 @@ window.LOVEYY_SCRAPBOOKS = {
       "alt": "The Breakfast Club official film poster",
       "type": "FILM",
       "title": "The Breakfast Club",
-      "caption": "allison, claire, and the others",
+      "caption": "allison & claire / a little bit of me",
       "link": "https://www.universalpicturesathome.com/movies/the-breakfast-club",
       "source": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/bltbca4b05c60eab1f8/691c7f1d3f08bee35bb3b0b6/TheBreakfastClub_Poster_2000x3000_uaa.jpg?width=2560"
     },
