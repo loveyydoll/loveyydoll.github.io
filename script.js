@@ -18,6 +18,7 @@
     if (!pool?.length || !tiles.length) return;
     const active = tiles.map(tile => pool.findIndex(item => tile.querySelector('img').getAttribute('src') === item.url));
     const failed = new Set();
+    let deck = [];
     let cursor = 0;
     let busy = false;
     async function turnPage() {
@@ -41,7 +42,16 @@
       }
       busy = true;
       const slot = slots[0];
-      const next = candidates[Math.floor(Math.random() * candidates.length)];
+      // Visit the whole collection before refilling, so every artist gets a turn.
+      deck = deck.filter(index => candidates.includes(index));
+      if (!deck.length) {
+        deck = [...candidates];
+        for (let i = deck.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [deck[i], deck[j]] = [deck[j], deck[i]];
+        }
+      }
+      const next = deck.shift();
       const item = pool[next];
       const preload = new Image();
       try {
@@ -61,6 +71,10 @@
       const image = tile.querySelector('img');
       image.src = item.url;
       image.alt = item.alt;
+      if (item.width && item.height) {
+        image.width = item.width;
+        image.height = item.height;
+      }
       tile.href = item.link;
       tile.querySelector('.scrap-meta').textContent = `fragment ${String(slot + 1).padStart(2, '0')} / ${item.type.toLowerCase()}`;
       tile.querySelector('.scrap-title').textContent = item.title;

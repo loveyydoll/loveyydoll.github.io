@@ -14,3 +14,5 @@ Scrapbooks start automatically and continue on hover. A hold checkbox pauses cha
 Keep one entry per title in moodboard-data.js. New images should be saved under assets/scrapbook and credited, with the initial HTML kept in sync for visitors without JavaScript.
 
 Film and TV preferences supplied by loveyy are saved in `docs/film-tv-preferences.json`. Consult that reference for future content edits. Watched films and favorites are separate; do not infer individual movies from franchise labels.
+
+Current listening is recorded in `docs/music-preferences.json`. Each artist appears once and the automatic shuffle visits the collection before refilling. Responsive image frames preserve image proportions with no cropping; image dimensions are stored alongside local artwork. TV posters use portrait frames.

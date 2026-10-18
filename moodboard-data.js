@@ -1,77 +1,148 @@
-/* Local artwork. Film choices: docs/film-tv-preferences.json. Credits: image-credits.html. */
+/* Local artwork. Preferences: docs/film-tv-preferences.json and docs/music-preferences.json. */
 window.LOVEYY_SCRAPBOOKS = {
   "music": [
     {
-      "url": "assets/scrapbook/01.webp",
-      "alt": "Clairo portrait by Lucas Creighton",
-      "type": "ARTIST",
       "title": "Clairo",
-      "caption": "the world in soft focus",
-      "link": "https://clairo.com/pages/music",
-      "source": "https://www.broken8music.com/cdn/shop/articles/Hero_Main_Press_Photo_credit__Lucas_Creighton_1.jpg?crop=center&height=1200&v=1720916677&width=1200"
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Clairo artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/clairo/1187613837?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/b1/84/29/b18429e2-70f1-95e3-c914-56770f89d761/94ad1a0a-b92b-4182-83f8-365af22966f6_ami-identity-aa52a1d4a464b30cb84ce8eef20c1cbc-2024-05-22T16-11-12.275Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-clairo.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/02.webp",
-      "alt": "Radiohead In Rainbows album artwork",
-      "type": "RECORD",
-      "title": "In Rainbows",
-      "caption": "colour in the static",
-      "link": "https://www.radiohead.com/library/#ir",
-      "source": "https://coverartarchive.org/release/e9b0f69e-ee3d-36ed-8c12-f8ee65f87e45/front-500"
+      "title": "Radiohead",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Radiohead artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/radiohead/657515?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/8a/49/84/8a498443-718e-40c0-404e-d1380c2352b7/ami-identity-531db02daa273271c643ba631a46b9d5-2026-09-07T07-12-12.872Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-radiohead.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/05.webp",
-      "alt": "Lowertown The Gaping Mouth cover art",
-      "type": "RECORD",
+      "title": "Olivia O.",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Olivia O. artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/olivia-o/1140246527?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/ba/7a/dc/ba7adcd8-65c2-3ad3-7129-58bcdf33fa2e/fc0ca53b-1248-4968-bed3-62cb34d37fda_file_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-oliviao.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
+      "title": "Fontaines D.C.",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Fontaines D.C. artist image from Apple Music",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/a5/23/e5/a523e50a-6337-5566-3db0-5a8176cbf02a/ami-identity-dc304023574eaecd53457c0a86abca04-2026-08-14T13-06-33.189Z_cropped.png/486x486bb.png",
+      "link": "https://music.apple.com/us/artist/fontaines-d-c/1341828470?uo=4",
+      "url": "assets/scrapbook/artist-fontainesdc.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
       "title": "Lowertown",
-      "caption": "the gaping mouth / raw, strange, perfect",
-      "link": "https://lowertown.bandcamp.com/album/the-gaping-mouth",
-      "source": "https://cdn.shopify.com/s/files/1/0867/1120/6219/files/TGM_4.png?v=1765879891"
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Lowertown artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/lowertown/1448207323?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/da/dc/25/dadc257e-700d-5dc0-b513-6b1de557649f/ami-identity-fca3a4edc4cde6de5585c5ca5b19707d-2026-03-10T16-33-56.303Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-lowertown.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/07.webp",
-      "alt": "Mazzy Star So Tonight That I Might See cover",
-      "type": "RECORD",
-      "title": "Mazzy Star",
-      "caption": "so tonight that i might see",
-      "link": "https://music.apple.com/us/artist/mazzy-star/451096",
-      "source": "https://data.opus3a.com/product_photo/61/61794bbbb08e12cf1c6d9bff5b52f4de/56d8c652225e5d2c3fd68b5af93a4876_max.jpg"
+      "title": "beabadoobee",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "beabadoobee artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/beabadoobee/1307650474?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/57/57/7d/57577d65-0337-57b9-91e1-cc190a347e8f/ami-identity-1ec5e4d68df4e12d09161a732fa3ecad-2026-06-16T14-59-44.548Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-beabadoobee.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/08.webp",
-      "alt": "Radiohead The King of Limbs cover artwork",
-      "type": "RECORD",
-      "title": "The King of Limbs",
-      "caption": "creatures in the trees",
-      "link": "https://www.radiohead.com/library/#tkol",
-      "source": "https://whitenoiserecords.org/cdn/shop/products/radiohead-the-king-of-limbs_600x600_crop_center.jpg?v=1686817421"
-    },
-    {
-      "url": "assets/scrapbook/11.webp",
-      "alt": "Feist The Reminder album artwork",
-      "type": "RECORD",
       "title": "Feist",
-      "caption": "the reminder, still here",
-      "link": "https://music.apple.com/us/album/the-reminder/1440768514",
-      "source": "https://assai.co.uk/cdn/shop/products/0602498474457_699x700.jpg?v=1478174720"
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Feist artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/feist/13453308?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/6c/59/db/6c59db60-76f1-f1fe-f7f6-29671de87196/ami-identity-f8eea3fcd9dc55e458c1393d9bc2a92a-2026-02-18T16-25-35.609Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-feist.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/13.webp",
-      "alt": "Clairo Charm album artwork",
-      "type": "RECORD",
-      "title": "Charm",
-      "caption": "clairo / slow summer",
-      "link": "https://clairo.com/pages/music",
-      "source": "https://images.ctfassets.net/2658fe8gbo8o/45294dddddfb4a3baf24b517d9eed6c4-photo-asset/e5c7e63a299a831ad156164b2c1aeb0f/Clairo___Charm.jpg?fm=webp&q=80&w=1200"
+      "title": "TV Girl",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "TV Girl artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/tv-girl/468460706?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Features126/v4/13/22/7a/13227ab0-90b9-632d-e243-a166a9d6b577/mzl.xtgczyzo.jpg/486x486bb.png",
+      "url": "assets/scrapbook/artist-tvgirl.webp",
+      "width": 486,
+      "height": 486
     },
     {
-      "url": "assets/scrapbook/14.webp",
-      "alt": "Radiohead A Moon Shaped Pool album cover",
-      "type": "RECORD",
-      "title": "A Moon Shaped Pool",
-      "caption": "radiohead / a slow ache",
-      "link": "https://www.radiohead.com/",
-      "source": "https://cdn.craft.cloud/3747bbfe-07db-499d-aa3d-b239ba21c062/assets/albums/amoonshapedpool.jpg?fit=cover&format=webp&s=Iclysx5pV-stZPgcGvl-7FPsW6rGwbNnxxeHd01-p5s&width=1200"
+      "title": "Wallows",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Wallows artist image from Apple Music",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/24/e6/24/24e62443-72d9-bf96-80ea-80e81627f590/ami-identity-b69538002e246d5c68a1f6c7d2dde0c2-2025-04-24T06-42-58.234Z_cropped.png/486x486bb.png",
+      "link": "https://music.apple.com/us/artist/wallows/1225257328?uo=4",
+      "url": "assets/scrapbook/artist-wallows.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
+      "title": "Maya Hawke",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Maya Hawke artist image from Apple Music",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/f7/0a/63/f70a63e4-e4ad-2a1e-b93b-132f89b7f17a/ami-identity-4e26445ceb57d02fb9517ee63572b9f7-2026-03-02T14-31-40.179Z_cropped.png/486x486bb.png",
+      "link": "https://music.apple.com/us/artist/maya-hawke/1473393677?uo=4",
+      "url": "assets/scrapbook/artist-mayahawke.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
+      "title": "Alex G",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Alex G artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/alex-g/871667491?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/6e/ac/28/6eac2867-07bd-5224-c586-018597c00c98/ami-identity-16c5f6b6d7613df8c0b8f5d7497cf581-2025-05-29T17-26-52.834Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-alexg.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
+      "title": "Angus & Julia Stone",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Angus & Julia Stone artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/angus-julia-stone/169843517?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/85/39/5f/85395f06-3a42-c5e8-96a0-956e8ad7f00f/ami-identity-ff67db8910677fa8491f189520584eae-2026-05-06T23-50-14.928Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-angusjuliastone.webp",
+      "width": 486,
+      "height": 486
+    },
+    {
+      "title": "Mazzy Star",
+      "type": "ARTIST",
+      "caption": "on repeat lately",
+      "alt": "Mazzy Star artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/mazzy-star/532997?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/ef/05/78/ef057825-793f-90b2-ed1b-079ee035c600/ami_U003aidentity_U003ac2e957ae924d4e26ec325897fe0e8c4b-2026-10-08T19-47-40.924Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-mazzystar.webp",
+      "width": 486,
+      "height": 486
     }
   ],
   "films": [
@@ -82,7 +153,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "title": "The Breakfast Club",
       "caption": "allison & claire / a little bit of me",
       "link": "https://www.universalpicturesathome.com/movies/the-breakfast-club",
-      "source": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/bltbca4b05c60eab1f8/691c7f1d3f08bee35bb3b0b6/TheBreakfastClub_Poster_2000x3000_uaa.jpg?width=2560"
+      "source": "https://images.contentstack.io/v3/assets/blt13adb7e2033fcee5/bltbca4b05c60eab1f8/691c7f1d3f08bee35bb3b0b6/TheBreakfastClub_Poster_2000x3000_uaa.jpg?width=2560",
+      "width": 1100,
+      "height": 1650
     },
     {
       "title": "I Saw the TV Glow",
@@ -91,7 +164,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://a24films.com/films/i-saw-the-tv-glow/og-image",
       "alt": "I Saw the TV Glow artwork from its official film page",
       "type": "FILM",
-      "caption": "a favorite / kept close"
+      "caption": "a favorite / kept close",
+      "width": 1100,
+      "height": 578
     },
     {
       "title": "Everything Everywhere All at Once",
@@ -100,7 +175,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://a24films.com/films/everything-everywhere-all-at-once/og-image",
       "alt": "Everything Everywhere All at Once artwork from its official film page",
       "type": "FILM",
-      "caption": "a favorite / kept close"
+      "caption": "a favorite / kept close",
+      "width": 1100,
+      "height": 578
     },
     {
       "title": "Dead Poets Society",
@@ -109,7 +186,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/55/02/57/5502571b-4870-b977-596f-dffe890879b3/DIS_DEAD_POETS_SOCIETY_WW_ARTWORK_EN_3840x2160_1VAQ72000000E6.lsr/1200x675.jpg",
       "alt": "Dead Poets Society artwork from its official film page",
       "type": "FILM",
-      "caption": "a favorite / kept close"
+      "caption": "a favorite / kept close",
+      "width": 1100,
+      "height": 619
     },
     {
       "url": "assets/scrapbook/06.webp",
@@ -118,7 +197,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "title": "Lady Bird",
       "caption": "growing up in two directions",
       "link": "https://www.imdb.com/title/tt4925292/",
-      "source": "https://images.squarespace-cdn.com/content/v1/59664adc15d5db3f2ad78ccd/1545847420592-DF26Y9WB4YLH7LOYT86Z/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU%2540._V1_.jpg?format=2500w"
+      "source": "https://images.squarespace-cdn.com/content/v1/59664adc15d5db3f2ad78ccd/1545847420592-DF26Y9WB4YLH7LOYT86Z/MV5BODhkZGE0NDQtZDc0Zi00YmQ4LWJiNmUtYTY1OGM1ODRmNGVkXkEyXkFqcGdeQXVyMTMxODk2OTU%2540._V1_.jpg?format=2500w",
+      "width": 1100,
+      "height": 1466
     }
   ],
   "worlds": [
@@ -129,7 +210,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "title": "Death Stranding 2",
       "caption": "keep on keeping on",
       "link": "https://www.playstation.com/en-us/games/death-stranding-2-on-the-beach/",
-      "source": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2115/ae183c63bbeb38d05ecce96aa7f693b4a3769a1835020b63.png"
+      "source": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2115/ae183c63bbeb38d05ecce96aa7f693b4a3769a1835020b63.png",
+      "width": 1024,
+      "height": 1024
     },
     {
       "url": "assets/scrapbook/10.webp",
@@ -138,7 +221,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "title": "Control",
       "caption": "the oldest house",
       "link": "https://www.remedygames.com/games/control",
-      "source": "https://i.3djuegos.com/juegos/14844/p7__remedy_/fotos/ficha/p7__remedy_-4583413.jpg"
+      "source": "https://i.3djuegos.com/juegos/14844/p7__remedy_/fotos/ficha/p7__remedy_-4583413.jpg",
+      "width": 580,
+      "height": 638
     },
     {
       "url": "assets/scrapbook/15.webp",
@@ -147,7 +232,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "title": "Phantom Liberty",
       "caption": "another night in night city",
       "link": "https://www.cyberpunk.net/",
-      "source": "https://fony.sk/sites/fony.sk/files/images/2023-10/e22efe5995a1271bc407b45e7d4a1b64bb3d9adae88b1887.png.jpeg"
+      "source": "https://fony.sk/sites/fony.sk/files/images/2023-10/e22efe5995a1271bc407b45e7d4a1b64bb3d9adae88b1887.png.jpeg",
+      "width": 1024,
+      "height": 1024
     },
     {
       "url": "assets/scrapbook/19.webp",
@@ -156,7 +243,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "alt": "Cyberpunk 2077 official game artwork",
       "type": "GAME",
       "link": "https://store.steampowered.com/app/1091500/",
-      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg"
+      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg",
+      "width": 460,
+      "height": 215
     },
     {
       "url": "assets/scrapbook/20.webp",
@@ -165,7 +254,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "alt": "Death Stranding official game artwork",
       "type": "GAME",
       "link": "https://store.steampowered.com/app/1190460/",
-      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1190460/header.jpg"
+      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1190460/header.jpg",
+      "width": 460,
+      "height": 215
     },
     {
       "url": "assets/scrapbook/21.webp",
@@ -174,7 +265,9 @@ window.LOVEYY_SCRAPBOOKS = {
       "alt": "Life Is Strange official game artwork",
       "type": "GAME",
       "link": "https://store.steampowered.com/app/319630/",
-      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319630/header.jpg"
+      "source": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/319630/header.jpg",
+      "width": 460,
+      "height": 215
     }
   ]
 };
