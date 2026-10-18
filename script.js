@@ -17,6 +17,7 @@
     const tiles = [...board.querySelectorAll('.scrap')];
     if (!pool?.length || !tiles.length) return;
     const active = tiles.map(tile => pool.findIndex(item => tile.querySelector('img').getAttribute('src') === item.url));
+    const shown = new Set(active);
     const failed = new Set();
     let deck = [];
     let cursor = 0;
@@ -24,7 +25,9 @@
     async function turnPage() {
       if (busy || document.hidden || hold?.checked) return;
       const slots = tiles.map((_, i) => (cursor + i) % tiles.length).filter(i => !tiles[i].contains(document.activeElement));
-      const candidates = pool.map((_, i) => i).filter(i => !active.includes(i) && !failed.has(i));
+      const activeArtists = active.map(i => pool[i]?.artist || pool[i]?.title);
+      const candidates = pool.map((_, i) => i).filter(i => !active.includes(i) && !failed.has(i)
+        && !activeArtists.includes(pool[i].artist || pool[i].title));
       if (!slots.length) return;
       // Small collections still move: exchange two existing fragments instead
       // of requiring more images than slots or displaying duplicate titles.
@@ -43,9 +46,12 @@
       busy = true;
       const slot = slots[0];
       // Visit the whole collection before refilling, so every artist gets a turn.
-      deck = deck.filter(index => candidates.includes(index));
+      if (shown.size + failed.size >= pool.length) shown.clear();
+      const unshown = candidates.filter(index => !shown.has(index));
+      const eligible = unshown.length ? unshown : candidates;
+      deck = deck.filter(index => eligible.includes(index));
       if (!deck.length) {
-        deck = [...candidates];
+        deck = [...eligible];
         for (let i = deck.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [deck[i], deck[j]] = [deck[j], deck[i]];
@@ -64,6 +70,7 @@
         if (document.hidden || hold?.checked || tiles[slot].contains(document.activeElement)) return;
         render(tiles[slot], item, slot);
         active[slot] = next;
+        shown.add(next);
         cursor = (slot + 1) % tiles.length;
       } catch { failed.add(next); } finally { busy = false; }
     }

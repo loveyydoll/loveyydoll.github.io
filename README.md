@@ -16,3 +16,4 @@ Keep one entry per title in moodboard-data.js. New images should be saved under 
 Film and TV preferences supplied by loveyy are saved in `docs/film-tv-preferences.json`. Consult that reference for future content edits. Watched films and favorites are separate; do not infer individual movies from franchise labels.
 
 Current listening is recorded in `docs/music-preferences.json`. Each artist appears once and the automatic shuffle visits the collection before refilling. Responsive image frames preserve image proportions with no cropping; image dimensions are stored alongside local artwork. TV posters use portrait frames.
+The music collection includes artist images and one representative record per artist. It prioritizes unseen fragments while keeping the same artist out of multiple visible tiles. Record selections are documented in docs/music-preferences.json.

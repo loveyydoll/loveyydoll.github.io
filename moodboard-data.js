@@ -1,4 +1,4 @@
-/* Local artwork. Preferences: docs/film-tv-preferences.json and docs/music-preferences.json. */
+/* Local artist images and records. Preferences: docs/music-preferences.json. */
 window.LOVEYY_SCRAPBOOKS = {
   "music": [
     {
@@ -10,7 +10,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/b1/84/29/b18429e2-70f1-95e3-c914-56770f89d761/94ad1a0a-b92b-4182-83f8-365af22966f6_ami-identity-aa52a1d4a464b30cb84ce8eef20c1cbc-2024-05-22T16-11-12.275Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-clairo.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Clairo"
+    },
+    {
+      "artist": "Clairo",
+      "title": "Charm",
+      "type": "RECORD",
+      "caption": "Clairo / from the record shelf",
+      "alt": "Charm record artwork by Clairo",
+      "link": "https://music.apple.com/us/album/charm/1742301413?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f7/8c/19/f78c1951-ced5-fea6-251b-50914d96fd62/00196922948305_Cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-clairo.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Radiohead",
@@ -21,7 +34,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/8a/49/84/8a498443-718e-40c0-404e-d1380c2352b7/ami-identity-531db02daa273271c643ba631a46b9d5-2026-09-07T07-12-12.872Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-radiohead.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Radiohead"
+    },
+    {
+      "artist": "Radiohead",
+      "title": "In Rainbows",
+      "type": "RECORD",
+      "caption": "Radiohead / from the record shelf",
+      "alt": "In Rainbows record artwork by Radiohead",
+      "link": "https://music.apple.com/us/album/in-rainbows/1109714933?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/dd/50/c7/dd50c790-99ac-d3d0-5ab8-e3891fb8fd52/634904032463.png/600x600bb.jpg",
+      "url": "assets/scrapbook/record-radiohead.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Olivia O.",
@@ -32,7 +58,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/ba/7a/dc/ba7adcd8-65c2-3ad3-7129-58bcdf33fa2e/fc0ca53b-1248-4968-bed3-62cb34d37fda_file_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-oliviao.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Olivia O."
+    },
+    {
+      "artist": "Olivia O.",
+      "title": "No Bones, Sickly Sweet",
+      "type": "RECORD",
+      "caption": "Olivia O. / from the record shelf",
+      "alt": "No Bones, Sickly Sweet record artwork by Olivia O.",
+      "link": "https://music.apple.com/us/album/no-bones-sickly-sweet/1768858631?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bc/16/b5/bc16b588-6743-228e-dbbf-57fc4eeaef24/artwork.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-oliviao.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Fontaines D.C.",
@@ -43,7 +82,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "link": "https://music.apple.com/us/artist/fontaines-d-c/1341828470?uo=4",
       "url": "assets/scrapbook/artist-fontainesdc.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Fontaines D.C."
+    },
+    {
+      "artist": "Fontaines D.C.",
+      "title": "Romance",
+      "type": "RECORD",
+      "caption": "Fontaines D.C. / from the record shelf",
+      "alt": "Romance record artwork by Fontaines D.C.",
+      "link": "https://music.apple.com/us/album/romance/1737990072?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/3a/76/4d3a7621-8b56-56a3-829f-545dde0b2b6a/191404143674.png/600x600bb.jpg",
+      "url": "assets/scrapbook/record-fontainesdc.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Lowertown",
@@ -54,7 +106,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/da/dc/25/dadc257e-700d-5dc0-b513-6b1de557649f/ami-identity-fca3a4edc4cde6de5585c5ca5b19707d-2026-03-10T16-33-56.303Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-lowertown.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Lowertown"
+    },
+    {
+      "artist": "Lowertown",
+      "title": "The Gaping Mouth",
+      "type": "RECORD",
+      "caption": "Lowertown / from the record shelf",
+      "alt": "The Gaping Mouth record artwork by Lowertown",
+      "link": "https://music.apple.com/us/album/the-gaping-mouth/1575440408?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5c/c6/8a/5cc68a58-06ea-58af-a5d5-d56b9a0f963a/192641775451_Cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-lowertown.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "beabadoobee",
@@ -65,7 +130,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/57/57/7d/57577d65-0337-57b9-91e1-cc190a347e8f/ami-identity-1ec5e4d68df4e12d09161a732fa3ecad-2026-06-16T14-59-44.548Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-beabadoobee.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "beabadoobee"
+    },
+    {
+      "artist": "beabadoobee",
+      "title": "This Is How Tomorrow Moves",
+      "type": "RECORD",
+      "caption": "beabadoobee / from the record shelf",
+      "alt": "This Is How Tomorrow Moves record artwork by beabadoobee",
+      "link": "https://music.apple.com/us/album/this-is-how-tomorrow-moves/1741999882?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/78/fa/f7/78faf7a9-97c0-5aa7-df1e-547da9703178/196922946356_Cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-beabadoobee.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Feist",
@@ -76,7 +154,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/6c/59/db/6c59db60-76f1-f1fe-f7f6-29671de87196/ami-identity-f8eea3fcd9dc55e458c1393d9bc2a92a-2026-02-18T16-25-35.609Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-feist.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Feist"
+    },
+    {
+      "artist": "Feist",
+      "title": "The Reminder (Deluxe Version)",
+      "type": "RECORD",
+      "caption": "Feist / from the record shelf",
+      "alt": "The Reminder (Deluxe Version) record artwork by Feist",
+      "link": "https://music.apple.com/us/album/the-reminder-deluxe-version/1440837029?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cc/f4/46/ccf44641-40d8-018d-1bb2-e86ed8b7beeb/00602547820976.rgb.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-feist.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "TV Girl",
@@ -87,7 +178,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/Features126/v4/13/22/7a/13227ab0-90b9-632d-e243-a166a9d6b577/mzl.xtgczyzo.jpg/486x486bb.png",
       "url": "assets/scrapbook/artist-tvgirl.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "TV Girl"
+    },
+    {
+      "artist": "TV Girl",
+      "title": "French Exit",
+      "type": "RECORD",
+      "caption": "TV Girl / from the record shelf",
+      "alt": "French Exit record artwork by TV Girl",
+      "link": "https://music.apple.com/us/album/french-exit/1623929720?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/3d/09/0c/3d090c87-f02b-3c3c-cedf-603cc900082f/888174780955_cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-tvgirl.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Wallows",
@@ -98,7 +202,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "link": "https://music.apple.com/us/artist/wallows/1225257328?uo=4",
       "url": "assets/scrapbook/artist-wallows.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Wallows"
+    },
+    {
+      "artist": "Wallows",
+      "title": "Nothing Happens",
+      "type": "RECORD",
+      "caption": "Wallows / from the record shelf",
+      "alt": "Nothing Happens record artwork by Wallows",
+      "link": "https://music.apple.com/us/album/nothing-happens/1450670646?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/66/4e/b5/664eb519-7163-512c-78a8-b22bf6b166dd/075679859211.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-wallows.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Maya Hawke",
@@ -109,7 +226,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "link": "https://music.apple.com/us/artist/maya-hawke/1473393677?uo=4",
       "url": "assets/scrapbook/artist-mayahawke.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Maya Hawke"
+    },
+    {
+      "artist": "Maya Hawke",
+      "title": "Chaos Angel",
+      "type": "RECORD",
+      "caption": "Maya Hawke / from the record shelf",
+      "alt": "Chaos Angel record artwork by Maya Hawke",
+      "link": "https://music.apple.com/us/album/chaos-angel/1887715681?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f6/ab/a4/f6aba4f9-019e-2979-fcec-80ff55788939/810090094601_Cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-mayahawke.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Alex G",
@@ -120,7 +250,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages221/v4/6e/ac/28/6eac2867-07bd-5224-c586-018597c00c98/ami-identity-16c5f6b6d7613df8c0b8f5d7497cf581-2025-05-29T17-26-52.834Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-alexg.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Alex G"
+    },
+    {
+      "artist": "Alex G",
+      "title": "God Save the Animals",
+      "type": "RECORD",
+      "caption": "Alex G / from the record shelf",
+      "alt": "God Save the Animals record artwork by Alex G",
+      "link": "https://music.apple.com/us/album/god-save-the-animals/1621299044?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/82/d9/bb/82d9bbb3-0b7b-bb1d-9632-44bb2c70c744/887828050765.png/600x600bb.jpg",
+      "url": "assets/scrapbook/record-alexg.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Angus & Julia Stone",
@@ -131,7 +274,20 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/85/39/5f/85395f06-3a42-c5e8-96a0-956e8ad7f00f/ami-identity-ff67db8910677fa8491f189520584eae-2026-05-06T23-50-14.928Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-angusjuliastone.webp",
       "width": 486,
-      "height": 486
+      "height": 486,
+      "artist": "Angus & Julia Stone"
+    },
+    {
+      "artist": "Angus & Julia Stone",
+      "title": "Down The Way",
+      "type": "RECORD",
+      "caption": "Angus & Julia Stone / from the record shelf",
+      "alt": "Down The Way record artwork by Angus & Julia Stone",
+      "link": "https://music.apple.com/us/album/down-the-way/1889997743?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/66/1c/ee/661cee4c-d9c5-6b78-9631-29e400010c18/05099960986450_Cover.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-angusjuliastone.webp",
+      "width": 600,
+      "height": 600
     },
     {
       "title": "Mazzy Star",
@@ -142,7 +298,44 @@ window.LOVEYY_SCRAPBOOKS = {
       "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/ef/05/78/ef057825-793f-90b2-ed1b-079ee035c600/ami_U003aidentity_U003ac2e957ae924d4e26ec325897fe0e8c4b-2026-10-08T19-47-40.924Z_cropped.png/486x486bb.png",
       "url": "assets/scrapbook/artist-mazzystar.webp",
       "width": 486,
+      "height": 486,
+      "artist": "Mazzy Star"
+    },
+    {
+      "artist": "Mazzy Star",
+      "title": "So Tonight That I Might See",
+      "type": "RECORD",
+      "caption": "Mazzy Star / from the record shelf",
+      "alt": "So Tonight That I Might See record artwork by Mazzy Star",
+      "link": "https://music.apple.com/us/album/so-tonight-that-i-might-see/1440848808?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/0f/03/ea/0f03ead1-d1eb-27fd-0734-b257b515692f/13UABIM59278.rgb.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-mazzystar.webp",
+      "width": 600,
+      "height": 600
+    },
+    {
+      "artist": "Broken Social Scene",
+      "title": "Broken Social Scene",
+      "type": "ARTIST",
+      "caption": "anthems & everything around them",
+      "alt": "Broken Social Scene artist image from Apple Music",
+      "link": "https://music.apple.com/us/artist/broken-social-scene/6925799?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/f6/16/bc/f616bc0a-0d3e-e6c5-a579-0d125ac1f547/ami-identity-42f40efbc5ff9bfc585f6a4cc55e572d-2026-01-09T00-14-43.972Z_cropped.png/486x486bb.png",
+      "url": "assets/scrapbook/artist-brokensocialscene.webp",
+      "width": 486,
       "height": 486
+    },
+    {
+      "artist": "Broken Social Scene",
+      "title": "You Forgot It In People",
+      "type": "RECORD",
+      "caption": "Broken Social Scene / Anthems for a Seventeen Year-Old Girl",
+      "alt": "You Forgot It In People record artwork by Broken Social Scene",
+      "link": "https://music.apple.com/us/album/you-forgot-it-in-people/1442853882?uo=4",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c6/b1/49/c6b14990-0dc7-3763-0e4d-acf243f1b8ee/00827590010062.rgb.jpg/600x600bb.jpg",
+      "url": "assets/scrapbook/record-brokensocialscene.webp",
+      "width": 600,
+      "height": 600
     }
   ],
   "films": [
