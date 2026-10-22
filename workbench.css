@@ -4,3 +4,14 @@
 @media(max-width:620px){.bench-back{display:none}.bench-intro{padding-top:3rem}.bench-intro h1{font-size:3.9rem}.bench-scribble{position:static;display:block;text-align:right;font-size:1.4rem;margin:1.7rem 1rem}.bench-index{font-size:.6rem;gap:1.2rem;margin-top:1.5rem}.bench-layout{grid-template-columns:1fr;gap:2.5rem}.bench-label{margin-bottom:2.5rem;align-items:flex-start}.bench-label .eyebrow{font-size:.53rem}.status-tag{font-size:.5rem}.project-sheet,.sound-sheet{margin:0 .5rem}.bench-copy h2{font-size:2.8rem}.music-layout .sound-sheet{order:-1}.project-details>div{grid-template-columns:82px 1fr}.bench-note p{font-size:1.8rem}}
 
 .bench-socials{flex-wrap:wrap;gap:1rem 1.5rem}
+
+.loom-sheet{background-color:#eee0df;background-image:linear-gradient(#a1768212 1px,transparent 1px),linear-gradient(90deg,#a1768212 1px,transparent 1px);transform:rotate(2deg)}
+.loom-study{min-height:300px;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;padding:1.5rem 0}
+.loom-note{font:italic 1.7rem var(--serif);text-align:center;color:var(--sheet-ink,#73535e);transform:rotate(-5deg)}
+.loom-study svg{display:block;width:100%;height:auto;overflow:visible}
+.loom-study path{fill:none;stroke:var(--rose,#8b596a);stroke-width:2.5;stroke-linecap:round}
+.loom-study path+path{stroke:var(--sage,#788368);stroke-width:1.5}
+.loom-characters{font:.58rem/1.8 var(--mono);letter-spacing:.13em;text-align:center;color:var(--sheet-ink,#73535e)}
+@media(max-width:800px){.loom-study{min-height:240px}}
+:root[data-theme] .project-sheet.loom-sheet{background-color:#eee0df}
+:root[data-theme=dark] .project-sheet.loom-sheet{background-color:#443339}

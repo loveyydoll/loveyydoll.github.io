@@ -3,7 +3,7 @@
 A static personal website. Open index.html, or serve this directory with any static web server. No build step or API keys are needed.
 
 - index.html: spring/fall scrapbook homepage.
-- portfolio.html: the workbench, featuring Aetherband and music experiments.
+- portfolio.html: the workbench, featuring Aetherband, Aetherloom, and music experiments.
 - styles.css: shared base styles; scrapbook.css: seasonal scrapbook theme; workbench.css: portfolio layout.
 - script.js: theme, copyright year, and automatic topic rotation.
 - moodboard-data.js: local artwork, descriptions, and source links.
