@@ -22,7 +22,7 @@ The original site was a single large HTML document containing page structure, a 
 
 - Rebuilt the page around semantic sections: hero, projects, listening moodboard, about, and footer.
 - Split files into `index.html`, `styles.css`, and `script.js`.
-- Added direct repository cards for Aetherband and JigsawEngine. Both are labelled as in development, and repository links are the source of truth for status.
+- Added direct repository cards for projects in development, using repository links as the source of truth for status.
 - Introduced an editorial, grain-inspired, night-listening visual direction with warm neutrals, muted rose, acid-lime accents, serif italics, and restrained motion.
 - Replaced fabricated-looking static X post previews with an honest outbound profile link.
 - Added responsive layouts, keyboard focus states, a skip link, reduced-motion support, accessible external links, and a theme toggle that works even if localStorage is unavailable.
