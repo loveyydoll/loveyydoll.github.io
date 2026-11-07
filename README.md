@@ -17,3 +17,19 @@ Film and TV preferences supplied by loveyy are saved in `docs/film-tv-preference
 
 Current listening is recorded in `docs/music-preferences.json`. Each artist appears once and the automatic shuffle visits the collection before refilling. Responsive image frames preserve image proportions with no cropping; image dimensions are stored alongside local artwork. TV posters use portrait frames.
 The music collection includes artist images and one representative record per artist. It prioritizes unseen fragments while keeping the same artist out of multiple visible tiles. Record selections are documented in docs/music-preferences.json.
+
+## Handmade journal / My Setup <3
+
+`setup.html` is a dedicated kraft-paper setup page linked from the homepage and workbench. Its local navigation covers desk, everyday devices, guitar and future studio only. The existing workbench and all music, film, game and social content remain.
+
+To add your photographs:
+1. Put your own JPG, WebP or PNG files in `assets/setup/` (create that folder).
+2. In `setup.js`, replace the four `null` values with relative paths such as `'assets/setup/desk.jpg'`.
+3. Edit `setupAlt` with accurate descriptions of each photograph. Captions and device specs live in `setup.html`; personal notes are plain HTML too.
+4. Preview before committing. Missing photo paths keep the labelled empty frame rather than showing a broken image. With JavaScript disabled the frames and all captions remain visible.
+
+No photos are fabricated. Paper, tape and placeholder patterns are CSS; no new raster imagery or paid assets were added. Caveat is a free Google Font, with local cursive fallbacks; existing font families and credits remain. The reference image guided the kraft colour, handwritten headings and guitar area; it is not redistributed.
+
+`journal.css` is the final shared design layer. It adds handwritten accents, taped photos, a setup invitation, wrapping navigation, larger controls and focus outlines. The setup paper keeps warm ink colours in both themes, while surrounding navigation follows the existing theme setting. The PC card includes only supplied CPU/GPU/RAM facts; remaining specifications are intentionally blank. All four studio upgrades are explicitly planned.
+
+Validation (2026-11-07): JavaScript syntax checks; `git diff --check`; all four HTML pages checked for local asset paths, fragment targets, duplicate IDs and image alt attributes. Browser reviewed the full desktop setup page and mobile layout at 375px; setup, homepage and workbench had no horizontal overflow. Theme switching and the homepage hold control worked. This is a focused accessibility review, not a full WCAG audit. No framework or build step was introduced.
