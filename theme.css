@@ -32,3 +32,14 @@
 :root[data-theme] .theme-dot{background:var(--sage);box-shadow:none}
 :root[data-theme] .socials a:hover b{color:var(--rust)}
 :root[data-theme] #films .scrap:nth-child(2),:root[data-theme] #worlds .scrap:nth-child(2){background:var(--card-two)}
+
+/* Permanent midnight palette shared by the retained archive, setup and projects. */
+:root[data-theme=dark]{color-scheme:dark;--bg:#090d12;--text:#dee3e5;--muted:#a0adb8;--line:#34414c;--sage:#a3bccb;--rust:#a3bccb;--rose:#a3bccb;--lime:#a3bccb;--paper:#111a23;--paper-2:#172431;--card-one:#111a23;--card-two:#15212c;--card-three:#182630;--card-ink:#dee3e5;--card-muted:#a0adb8;--note:#15212c;--note-ink:#dee3e5;--note-muted:#a0adb8;--sheet:#111a23;--sound-sheet:#15212c;--sheet-ink:#dee3e5;--sheet-muted:#a0adb8;--surface-accent:#a3bccb;--media:#0b1118;--button:#a3bccb;--button-ink:#090d12;--tape:#7892a644}
+:root[data-theme] body{background:var(--bg)}.theme-toggle{display:none!important}
+
+:root[data-theme=dark] .kraft-book{background:#111a23;color:#dee3e5;--rust:#a3bccb;--muted:#a0adb8;--line:#34414c;--sage:#a3bccb;box-shadow:none}
+:root[data-theme=dark] .kraft-book .eyebrow,:root[data-theme=dark] .kraft-book .spread-copy,:root[data-theme=dark] .spread-doodle{color:#a0adb8}
+:root[data-theme=dark] .setup-photo,:root[data-theme=dark] .pc-note,:root[data-theme=dark] .upgrade-note,:root[data-theme=dark] .upgrade-note:nth-child(even){background:#172431;color:#dee3e5;box-shadow:none;transform:none}
+:root[data-theme=dark] .photo-slot,:root[data-theme=dark] .photo-slot img{background:#0b1118}
+:root[data-theme=dark] .upgrade-space,:root[data-theme=dark] .photo-placeholder{color:#a3bccb}
+:root[data-theme=dark] .setup-photo:before{display:none}
