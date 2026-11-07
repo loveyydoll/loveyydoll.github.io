@@ -28,7 +28,7 @@ The four supplied images are in `assets/setup/` and appear directly in `setup.ht
 
 For an easy text-editing workflow:
 1. Serve the site locally, then open `index.html?edit`, `setup.html?edit` or `portfolio.html?edit`.
-2. Click outlined copy and type. Drafts save in this browser and persist between editor visits. Add `?edit` separately when moving to another page.
+2. Enter the password `root` when prompted, then click outlined copy and type. Drafts save in this browser and persist between editor visits. Add `?edit` separately when moving to another page.
 3. Click **Export copy.json**. Replace the repository's `copy.json` with the download, commit it and deploy normally. Normal visitors only see the committed copy; the editor has no server write access.
 4. Use **Discard local draft** to return to the committed text. This clears the draft across pages after confirmation.
 
@@ -43,3 +43,5 @@ The reference image guided the kraft colour, handwritten headings and guitar are
 Validation (2026-11-07): JavaScript syntax checks; `git diff --check`; all four HTML pages checked for local asset paths, fragment targets, duplicate IDs and image alt attributes. Browser reviewed the full desktop setup page and mobile layout at 375px; setup, homepage and workbench had no horizontal overflow. Theme switching and the homepage hold control worked. This is a focused accessibility review, not a full WCAG audit. No framework or build step was introduced.
 
 Follow-up validation: supplied images load in their matching frames; desktop and 375px setup/home/workbench layouts reviewed without horizontal overflow. Pencil mode editing persisted across reload, and exporting copy.json produced a download. The opening title card appeared without a skip button and dismissed itself. Image fitting preserves complete guitar and product silhouettes. JavaScript syntax, local links/assets, copy IDs and diff whitespace checked again.
+
+Pencil mode asks for `root` on every editor page visit. Cancel, Escape or an incorrect password never enables editing or loads the local draft. This is a client-side convenience gate, not secure authentication: the password is visible in the public source and can be bypassed. Publishing still requires repository access; real exclusive editor access would require server-side authentication.

@@ -1,7 +1,43 @@
 /* Copy editing and quiet paper motion. No build tools or accounts required. */
 (async () => {
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const editing = new URLSearchParams(location.search).has('edit');
+  const editRequested = new URLSearchParams(location.search).has('edit');
+  // Convenience gate only: a static site cannot keep a client-side password secret.
+  async function unlockEditor() {
+    const dialog = document.createElement('dialog');
+    dialog.className = 'editor-unlock';
+    dialog.setAttribute('aria-labelledby', 'unlock-title');
+    dialog.innerHTML = `<form method="dialog">
+      <h2 id="unlock-title">A little key, please.</h2>
+      <p>Enter the password to open Pencil mode.</p>
+      <label for="editor-password">Password</label>
+      <input id="editor-password" type="password" autocomplete="off" required autofocus>
+      <p class="unlock-error" role="status"></p>
+      <div><button type="submit">Open the notebook</button>
+      <button type="button" class="unlock-cancel">Go back</button></div>
+    </form>`;
+    document.body.append(dialog);
+    return new Promise(resolve => {
+      let unlocked = false;
+      dialog.querySelector('form').addEventListener('submit', event => {
+        event.preventDefault();
+        const input = dialog.querySelector('input');
+        if (input.value !== 'root') {
+          dialog.querySelector('.unlock-error').textContent = 'That key does not fit. Try again.';
+          input.value = ''; input.focus(); return;
+        }
+        unlocked = true;
+        dialog.close();
+      });
+      dialog.querySelector('.unlock-cancel').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => {
+        dialog.remove();
+        resolve(unlocked);
+      }, {once:true});
+      dialog.showModal();
+    });
+  }
+  const editing = editRequested && await unlockEditor();
   const storageKey = 'loveyy-copy-draft-v1';
   const nodes = [...document.querySelectorAll('[data-copy]')].filter(node => !node.closest('.scrap, .theme-toggle') && node.id !== 'year');
   const fallback = Object.fromEntries(nodes.map(node => [node.dataset.copy, node.textContent]));
